@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: artifacts:ble_mesh-android_api-v2_low-release">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ble_mesh-android_api-v2_low-release.aar/bb105f56b8652c3f933524819cb24ebb/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ble_mesh-android_api-v2_low-release.aar/bb105f56b8652c3f933524819cb24ebb/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

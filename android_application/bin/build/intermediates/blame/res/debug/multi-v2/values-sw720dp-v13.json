@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\android_application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw720dp-v13\\values-sw720dp-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\android_application\\src\\main\\res\\values-sw720dp\\dimens.xml",
+                    "from": {
+                        "startLines": "5,11,7,8,9,6,10",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "112,414,220,268,317,171,365",
+                        "endColumns": "57,36,46,47,46,47,47",
+                        "endOffsets": "165,446,262,311,359,214,408"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,113,150,197,245,292,340",
+                        "endColumns": "57,36,46,47,46,47,47",
+                        "endOffsets": "108,145,192,240,287,335,383"
+                    }
+                }
+            ]
+        }
+    ]
+}
