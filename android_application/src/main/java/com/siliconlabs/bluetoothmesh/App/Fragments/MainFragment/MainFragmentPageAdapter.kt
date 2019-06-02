@@ -16,7 +16,7 @@ import com.siliconlabs.bluetoothmesh.R
  * @author Comarch S.A.
  */
 class MainFragmentPageAdapter(fm: FragmentManager, private val context: Context) : FragmentStatePagerAdapter(fm) {
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     override fun getItem(position: Int): Fragment {
         return when (position) {

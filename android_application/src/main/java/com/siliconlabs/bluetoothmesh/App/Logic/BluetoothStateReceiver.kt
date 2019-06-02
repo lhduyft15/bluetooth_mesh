@@ -14,7 +14,7 @@ import android.util.Log
  * @author Comarch S.A.
  */
 class BluetoothStateReceiver : BroadcastReceiver() {
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     private val listeners: ArrayList<BluetoothStateListener> = ArrayList()
 

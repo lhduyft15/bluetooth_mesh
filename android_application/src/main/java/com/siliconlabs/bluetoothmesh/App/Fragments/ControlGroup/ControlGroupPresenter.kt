@@ -23,13 +23,13 @@ import com.siliconlabs.bluetoothmesh.App.Models.MeshNodeManager
 /**
  * @author Comarch S.A.
  */
-class ControlGroupPresenter(private val controlGroupView: ControlGroupView, val networkConnectionLogic: NetworkConnectionLogic, val meshLogic: MeshLogic, private val meshGroupControl: MeshGroupControl, val meshNodeManager: MeshNodeManager) : BasePresenter, NetworkConnectionListener, DeviceListAdapter.DeviceItemListener, MeshElementControl.GetLevelCallback,MeshGroupControl.SetCallback, MeshElementControl.SetCallback  {
-    private val TAG: String = javaClass.canonicalName
+class ControlGroupPresenter(private val controlGroupView: ControlGroupView, val networkConnectionLogic: NetworkConnectionLogic, val meshLogic: MeshLogic, private val meshGroupControl: MeshGroupControl, val meshNodeManager: MeshNodeManager) : BasePresenter, NetworkConnectionListener, DeviceListAdapter.DeviceItemListener, MeshGroupControl.SetCallback, MeshElementControl.SetCallback {
+    private val TAG: String = javaClass.canonicalName!!
 
     val groupInfo = meshLogic.currentGroup!!
     val networkInfo: Subnet = meshLogic.currentSubnet!!
 
-    //var valueGet :Boolean? =  false
+
     var nodes: Set<MeshNode> = emptySet()
 
     override fun onResume() {
@@ -97,13 +97,13 @@ class ControlGroupPresenter(private val controlGroupView: ControlGroupView, val 
 
     fun meshIconClicked(iconState: ControlGroupView.MESH_ICON_STATE) {
         when (iconState) {
-            NetworkView.MESH_ICON_STATE.DISCONNECTED -> {
+            ControlGroupView.MESH_ICON_STATE.DISCONNECTED -> {
                 networkConnectionLogic.connect(networkInfo)
             }
-            NetworkView.MESH_ICON_STATE.CONNECTING -> {
+            ControlGroupView.MESH_ICON_STATE.CONNECTING -> {
                 networkConnectionLogic.disconnect()
             }
-            NetworkView.MESH_ICON_STATE.CONNECTED -> {
+            ControlGroupView.MESH_ICON_STATE.CONNECTED -> {
                 networkConnectionLogic.disconnect()
             }
         }
@@ -188,19 +188,6 @@ class ControlGroupPresenter(private val controlGroupView: ControlGroupView, val 
         controlGroupView.refreshView()
     }
 
-    override fun onClickUpdateDataSensorListener(deviceInfo: MeshNode) {
-        val nodeElementControl = MeshElementControl(deviceInfo.node.elements[0], groupInfo)
-
-        val newOnOffState = !deviceInfo.onOffUpdate
-
-        //nodeElementControl.setOnOff(newOnOffState, this)
-        //nodeElementControl.getOnOff(this)
-        nodeElementControl.getLevel(this)
-        deviceInfo.onOffUpdate = newOnOffState
-        //deviceInfo.status = valueGet
-        controlGroupView.refreshView()
-
-    }
     override fun onSeekBarChangeListener(deviceInfo: MeshNode, levelPercentage: Int, temperaturePercentage: Int?, deltaUvPercentage: Int?) {
         val nodeElementControl = MeshElementControl(deviceInfo.node.elements[0], groupInfo)
 
@@ -244,11 +231,6 @@ class ControlGroupPresenter(private val controlGroupView: ControlGroupView, val 
 
     override fun onConfigClickListener(deviceInfo: MeshNode) {
         controlGroupView.showDeviceConfigDialog(deviceInfo)
-    }
-
-    //update data sensor
-    override fun success(level: Int){
-        Log.d("AAA", "Success")
     }
 
 }

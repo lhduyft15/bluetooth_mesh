@@ -21,7 +21,7 @@ import com.siliconlabs.bluetoothmesh.App.Models.ProvisioningStatusPropagator
 import com.siliconlabs.bluetoothmesh.R
 
 class ScannerDialogsPresenter(val scannerPresenter: ScannerPresenter, val provisioningModel: ProvisioningModel) {
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     private lateinit var activity: Activity
     private var spinner_value = 0
@@ -75,7 +75,7 @@ class ScannerDialogsPresenter(val scannerPresenter: ScannerPresenter, val provis
                     mainActivity.showFragment(networkFragment, true, true)
                 }
                 ProvisioningStatusPropagator.ProvisioningStatus.DeviceAlreadyAdded -> {
-                    meshScannerDialogs.showDeviceAlreadyExistDialog(DialogInterface.OnClickListener { dialog, which ->
+                    meshScannerDialogs.showDeviceAlreadyExistDialog(DialogInterface.OnClickListener { _, which ->
                         when (which) {
                             AlertDialog.BUTTON_POSITIVE -> {
                                 provisioningModel.apply {

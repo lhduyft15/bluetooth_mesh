@@ -30,7 +30,7 @@ import javax.inject.Inject
  */
 class MainFragment : DaggerFragment(), MainFragmentView {
 
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     private val PERMISSION_REQUEST_COARSE_LOCATION = 1
 
@@ -93,16 +93,22 @@ class MainFragment : DaggerFragment(), MainFragmentView {
         view.apply {
             var appVersionName = getString(R.string.dialog_about_app_version).format(BuildConfig.VERSION_NAME)
 
+            if (BuildConfig.DEBUG && BuildConfig.GIT_SHA.isNotEmpty()) {
+                appVersionName += "\n" + "Git SHA " + BuildConfig.GIT_SHA
+            }
             if (BuildConfig.DEBUG && BuildConfig.BUILD_NUMBER != null) {
                 appVersionName += "\n" + "Build Number  " + BuildConfig.BUILD_NUMBER
             }
             tv_app_version.text = appVersionName
 
-            var adkVersionName = getString(R.string.dialog_about_adk_version).format(com.siliconlab.bluetoothmesh.adk.BuildConfig.VERSION_NAME)
-            if (BuildConfig.DEBUG && com.siliconlab.bluetoothmesh.adk.BuildConfig.BUILD_NUMBER != null) {
-                adkVersionName += "\n" + "Build Number  " + com.siliconlab.bluetoothmesh.adk.BuildConfig.BUILD_NUMBER
-            }
+            val adkVersionName = getString(R.string.dialog_about_adk_version).format(com.siliconlab.bluetoothmesh.adk.BuildConfig.ADK_VERSION)
             tv_adk_version.text = adkVersionName
+
+            var apiVersionName = getString(R.string.dialog_about_api_version).format(com.siliconlab.bluetoothmesh.adk.BuildConfig.VERSION_NAME)
+            if (BuildConfig.DEBUG && com.siliconlab.bluetoothmesh.adk.BuildConfig.BUILD_NUMBER != null) {
+                apiVersionName += "\n" + "Build Number  " + com.siliconlab.bluetoothmesh.adk.BuildConfig.BUILD_NUMBER
+            }
+            tv_api_version.text = apiVersionName
 
         }
         val builder = android.app.AlertDialog.Builder(activity, R.style.AppTheme_Light_Dialog_Alert_Wrap)
@@ -154,6 +160,7 @@ class MainFragment : DaggerFragment(), MainFragmentView {
         tab_layout.setupWithViewPager(view_pager)
     }
 
+    //Hien thi yeu cau bat bluetooth va vi tri
     override fun setEnablingButtons() {
         if (!BluetoothAdapter.getDefaultAdapter().isEnabled) {
             bluetooth_enable.visibility = View.VISIBLE

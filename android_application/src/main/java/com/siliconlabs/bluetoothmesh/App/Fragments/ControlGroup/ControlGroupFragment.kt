@@ -30,7 +30,7 @@ import javax.inject.Inject
  * @author Comarch S.A.
  */
 class ControlGroupFragment : DaggerFragment(), ControlGroupView, DeviceEditionDialogs.ActivityProvider, DeviceEditionDialogsPresenter.ParentView {
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     override fun refreshList() {
         activity?.runOnUiThread {
@@ -138,15 +138,15 @@ class ControlGroupFragment : DaggerFragment(), ControlGroupView, DeviceEditionDi
 
         meshStatusBtn?.apply {
             when (iconState) {
-                NetworkView.MESH_ICON_STATE.DISCONNECTED -> {
+                ControlGroupView.MESH_ICON_STATE.DISCONNECTED -> {
                     setImageResource(R.drawable.ic_mesh_red)
                     clearAnimation()
                 }
-                NetworkView.MESH_ICON_STATE.CONNECTING -> {
+                ControlGroupView.MESH_ICON_STATE.CONNECTING -> {
                     setImageResource(R.drawable.ic_mesh_yellow)
                     startAnimation(rotate)
                 }
-                NetworkView.MESH_ICON_STATE.CONNECTED -> {
+                ControlGroupView.MESH_ICON_STATE.CONNECTED -> {
                     setImageResource(R.drawable.ic_mesh_green)
                     clearAnimation()
                 }

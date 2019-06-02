@@ -17,7 +17,7 @@ import java.util.concurrent.Executors
  * @author Comarch S.A.
  */
 class DeviceConfigPresenter(private val deviceConfigView: DeviceConfigView, private val meshLogic: MeshLogic) : BasePresenter {
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     private val meshNode = meshLogic.deviceToConfigure!!
     private val configurationControl: ConfigurationControl = ConfigurationControl(meshNode.node)

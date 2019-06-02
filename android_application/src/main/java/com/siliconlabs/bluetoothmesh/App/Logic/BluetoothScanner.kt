@@ -14,7 +14,7 @@ import java.util.*
  * @author Comarch S.A.
  */
 class BluetoothScanner(bluetoothStateReceiver: BluetoothStateReceiver) : ScanCallback(), BluetoothStateReceiver.BluetoothStateListener {
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     private var leScanStarted: Boolean = false
 

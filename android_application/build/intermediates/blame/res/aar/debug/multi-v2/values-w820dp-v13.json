@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\SiliconLabs\\SimplicityStudio\\v4\\developer\\sdks\\blemesh\\v1.4\\app\\bluetooth\\android_application\\build\\intermediates\\incremental\\mergeAarDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\SiliconLabs\\SimplicityStudio\\v4\\developer\\sdks\\blemesh\\v1.4\\app\\bluetooth\\android_application\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "from": {
+                        "startLines": "8,14,10,11,12,9,13",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "390,692,498,546,595,449,643",
+                        "endColumns": "57,36,46,47,46,47,47",
+                        "endOffsets": "443,724,540,589,637,492,686"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,113,150,197,245,292,340",
+                        "endColumns": "57,36,46,47,46,47,47",
+                        "endOffsets": "108,145,192,240,287,335,383"
+                    }
+                }
+            ]
+        }
+    ]
+}

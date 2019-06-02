@@ -34,7 +34,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!--Block to control model OnOff use id : iv_device_image | tv_device_id-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -75,49 +74,6 @@
                     android:src="@drawable/ic_unknown" />
             </LinearLayout>
 
-            <!--Demo data sensor-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/ll_data_sensor"
-                android:visibility="visible"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="@dimen/adapter_item_padding"
-                        android:text="Data Sensor"
-                        android:textColor="@color/adapter_item_title_color"
-                        android:textSize="@dimen/adapter_label_big_size" />
-
-                    <TextView
-                        android:id="@+id/tv_data_sensor_value"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="@dimen/adapter_item_padding"
-                        android:text="0"
-                        android:textColor="@color/adapter_item_label_color"
-                        android:textSize="@dimen/adapter_label_medium_size" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/iv_update_data_sensor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="@dimen/adapter_item_padding"
-                    android:src="@drawable/ic_unknown" />
-            </LinearLayout>
-
-            <!--Block to control device use id : ll_controlls model : Lightness , Level , CTL-->
             <LinearLayout
                 android:id="@+id/ll_controlls"
                 android:layout_width="match_parent"
@@ -126,7 +82,6 @@
                 android:orientation="vertical"
                 android:visibility="visible">
 
-                <!--Control Lightness use id : sb_level_control | tv_level_value-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -175,7 +130,6 @@
 
                 </LinearLayout>
 
-                <!--Control Temperature and Delta UV use id : ll_slider_CTL-->
                 <LinearLayout
                     android:id="@+id/ll_slider_CTL"
                     android:layout_width="match_parent"
@@ -183,7 +137,6 @@
                     android:orientation="vertical"
                     android:visibility="visible">
 
-                    <!--Control Temeperature | use id :[ sb_temperature_control/ tv_temperature_value]-->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -230,7 +183,6 @@
 
                     </LinearLayout>
 
-                    <!--Control DeltaUV | use id :[ sb_uv_control /  tv_uv_value ] to config -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -277,13 +229,8 @@
 
                         </LinearLayout>
                     </LinearLayout>
-
                 </LinearLayout>
-
             </LinearLayout>
-
-
-
         </LinearLayout>
     </LinearLayout>
 

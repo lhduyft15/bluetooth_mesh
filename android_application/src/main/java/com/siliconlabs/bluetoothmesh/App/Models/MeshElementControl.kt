@@ -4,6 +4,7 @@
 
 package com.siliconlabs.bluetoothmesh.App.Models
 
+import android.util.Log
 import com.siliconlab.bluetoothmesh.adk.ErrorType
 import com.siliconlab.bluetoothmesh.adk.data_model.element.Element
 import com.siliconlab.bluetoothmesh.adk.data_model.group.Group
@@ -26,10 +27,12 @@ class MeshElementControl(element: Element, val group: Group) {
         controlElement.getStatus(GenericOnOff(), object : GetElementStatusCallback<GenericOnOff> {
             override fun success(element: Element?, group: Group?, value: GenericOnOff?) {
                 callback.success(value!!.state == GenericOnOff.STATE.ON)
+                Log.d("WWWW","WWWWWWWWWWWWWWWWWWWWWWW")
             }
 
             override fun error(element: Element?, group: Group?, error: ErrorType?) {
                 callback.error(error!!)
+                Log.d("WWWW",error.toString())
             }
         })
     }

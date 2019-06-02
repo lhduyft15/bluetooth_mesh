@@ -26,7 +26,7 @@ import javax.inject.Inject
  * @author Comarch S.A.
  */
 class NetworkFragment : DaggerFragment(), NetworkView {
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     private lateinit var rotate: Animation
     private var meshStatusBtn: ImageView? = null

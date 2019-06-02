@@ -18,8 +18,8 @@ import com.siliconlabs.bluetoothmesh.App.Models.MeshNodeManager
 /**
  * @author Comarch S.A.
  */
-class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLogic: MeshLogic, val networkConnectionLogic: NetworkConnectionLogic, val meshNodeManager: MeshNodeManager) : BasePresenter, DeviceListAdapter.DeviceItemListener,MeshElementControl.GetLevelCallback,MeshElementControl.SetCallback, NetworkConnectionListener {
-    private val TAG: String = javaClass.canonicalName
+class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLogic: MeshLogic, val networkConnectionLogic: NetworkConnectionLogic, val meshNodeManager: MeshNodeManager) : BasePresenter, DeviceListAdapter.DeviceItemListener, MeshElementControl.SetCallback, MeshElementControl.GetOnOffCallback, NetworkConnectionListener {
+    private val TAG: String = javaClass.canonicalName!!
 
     private val networkInfo = meshLogic.currentSubnet!!
 
@@ -27,7 +27,6 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
 
     private var startedConfiguration = false
 
-    //private var valueGet :Boolean? = false
     override fun onResume() {
         Log.d(TAG, "onResume")
         refreshList()
@@ -57,11 +56,11 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
 
         when (deviceInfo.functionality) {
             DeviceFunctionality.FUNCTIONALITY.OnOff -> {
-                val newOnOffState = !deviceInfo.onOffState  //Doi trang thai on/off sao moi lan click
+                val newOnOffState = !deviceInfo.onOffState
 
-                nodeElementControl.setOnOff(newOnOffState, this)
+                //nodeElementControl.setOnOff(newOnOffState, this)
+                nodeElementControl.getOnOff(this)
                 deviceInfo.onOffState = newOnOffState
-
             }
             DeviceFunctionality.FUNCTIONALITY.Level -> {
                 var newLevelPercentage = 100
@@ -94,26 +93,6 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
 
         deviceListView.notifyDataSetChanged()
     }
-
-    //Update data sensor****************************************************************************
-    override fun onClickUpdateDataSensorListener(deviceInfo: MeshNode) {
-        if (deviceInfo.node.groups.isEmpty()) {
-            return
-        }
-
-        val nodeElementControl = MeshElementControl(deviceInfo.node.elements[0], deviceInfo.node.groups.iterator().next())
-
-        val newOnOffState = !deviceInfo.onOffUpdate //Doi trang thai on/off sao moi lan click
-
-        //nodeElementControl.setOnOff(newOnOffState, this)
-        //nodeElementControl.getOnOff(this)
-        nodeElementControl.getLevel(this)
-        deviceInfo.onOffUpdate = newOnOffState
-        //deviceInfo.status = valueGet
-        deviceListView.notifyDataSetChanged()
-
-    }
-    //********************************************************************************************
 
     override fun onDeleteClickListener(deviceInfo: List<MeshNode>) {
         deviceListView.showDeleteDeviceDialog(deviceInfo)
@@ -157,18 +136,11 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
     }
 
     // mesh element control callback
-
-    //update data sensor********************************************************
-    override fun success(on: Int){
-        //valueGet = on
-        Log.d("AAA",on.toString() )
-    }
-
+    override fun success(on: Boolean){}
     override fun error(error: ErrorType) {
         deviceListView.showErrorToast(error)
-        Log.d("AAA","EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
     }
-    //**************************************************************************
+
     // network connection callback
 
     override fun connecting() {
@@ -191,6 +163,7 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
         // nothing to do
         if (startedConfiguration) {
             deviceListView.updateLoadingDialogMessage(DeviceListView.LOADING_DIALOG_MESSAGE.CONFIG_CONNECTING_ERROR, error, true)
+            meshLogic.deviceToConfigure = null
         }
     }
 }

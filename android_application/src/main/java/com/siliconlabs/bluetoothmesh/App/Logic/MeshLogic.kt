@@ -20,7 +20,7 @@ import java.io.File
  * @author Comarch S.A.
  */
 class MeshLogic(val context: Context) {
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     val bluetoothMesh: BluetoothMesh
 

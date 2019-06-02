@@ -12,8 +12,6 @@ import com.siliconlabs.bluetoothmesh.App.Models.DeviceFunctionality
  */
 data class MeshNode(val node: Node) {
     var onOffState = false
-    var onOffUpdate = false
-    var status :Boolean? = false
     var levelPercentage = 0
     var lightnessPercentage = 0
     var temperaturePercentage = 0

@@ -22,7 +22,7 @@ import com.siliconlabs.bluetoothmesh.App.Logic.MeshLogic
  * @author Comarch S.A.
  */
 class MeshNetworkManager(val meshLogic: MeshLogic) {
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     val bluetoothMesh = meshLogic.bluetoothMesh
 

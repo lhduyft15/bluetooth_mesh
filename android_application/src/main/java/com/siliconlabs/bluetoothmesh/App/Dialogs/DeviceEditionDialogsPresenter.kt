@@ -26,7 +26,7 @@ import com.siliconlabs.bluetoothmesh.App.Utils.Converters
 import java.util.concurrent.Executors
 
 class DeviceEditionDialogsPresenter(val dialog: DeviceEditionDialogs, val parentView: ParentView, val meshLogic: MeshLogic, val deviceFunctionalityDb: MeshNodeManager) : DeviceEditionDialogs.DeviceEditionDialogsListener {
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     interface ParentView {
         fun returnToNetworkList()

@@ -12,7 +12,7 @@ import com.siliconlabs.bluetoothmesh.App.ModelView.MeshNode
  */
 interface DeviceListView {
 
-    fun setDevicesList(devicesInfo: Set<MeshNode>)
+    fun setDevicesList(newDevicesList: Set<MeshNode>)
 
     fun notifyDataSetChanged()
 
@@ -24,7 +24,7 @@ interface DeviceListView {
 
     fun updateLoadingDialogMessage(loadingMessage: LOADING_DIALOG_MESSAGE, errorType: ErrorType, showCloseButton: Boolean = false)
 
-    fun showDeleteDeviceDialog(deviceInfo: List<MeshNode>)
+    fun showDeleteDeviceDialog(devicesInfos: List<MeshNode>)
 
     fun showDeviceConfigDialog(deviceInfo: MeshNode)
 

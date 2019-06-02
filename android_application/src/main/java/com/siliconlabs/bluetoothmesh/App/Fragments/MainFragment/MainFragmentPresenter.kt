@@ -11,7 +11,7 @@ import com.siliconlabs.bluetoothmesh.App.Logic.BluetoothStateReceiver
  * @author Comarch S.A.
  */
 class MainFragmentPresenter(private val mainFragmentView: MainFragmentView, private val bluetoothStateReceiver: BluetoothStateReceiver) : BasePresenter, BluetoothStateReceiver.BluetoothStateListener {
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     override fun onResume() {
         mainFragmentView.setView()

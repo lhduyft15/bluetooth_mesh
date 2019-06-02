@@ -1,4 +1,4 @@
-#Thu Apr 18 11:21:34 ICT 2019
-base.0=C\:\\android_application\\build\\intermediates\\transforms\\dexMerger\\debug\\5
+#Thu May 09 14:56:50 ICT 2019
+base.0=C\:\\SiliconLabs\\SimplicityStudio\\v4\\developer\\sdks\\blemesh\\v1.4\\app\\bluetooth\\android_application\\build\\intermediates\\transforms\\dexMerger\\debug\\5
 path.0=classes.dex
 renamed.0=classes.dex

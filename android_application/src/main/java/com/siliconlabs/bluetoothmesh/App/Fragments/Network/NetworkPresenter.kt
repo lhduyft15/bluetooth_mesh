@@ -16,7 +16,7 @@ import com.siliconlabs.bluetoothmesh.App.Logic.NetworkConnectionLogic
  * @author Comarch S.A.
  */
 class NetworkPresenter(private val networkView: NetworkView, private val networkConnectionLogic: NetworkConnectionLogic, private val meshLogic: MeshLogic) : BasePresenter, NetworkConnectionListener {
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     private var configDialogShowed: Boolean = false
     private val networkInfo: Subnet = meshLogic.currentSubnet!!

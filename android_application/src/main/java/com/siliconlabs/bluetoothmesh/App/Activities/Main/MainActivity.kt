@@ -33,7 +33,7 @@ class MainActivity : DaggerAppCompatActivity(), MainActivityView {
         const val PERMISSIONS_REQUEST_CODE: Int = 12
     }
 
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     @Inject
     lateinit var mainActivityPresenter: MainActivityPresenter

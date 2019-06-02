@@ -1,5 +1,12 @@
 /*
  * Copyright © 2019 Silicon Labs, http://www.silabs.com. All rights reserved.
  */
-
+//ble_mesh aar
 include ':ble_mesh-android_api-v2_high-release', ':ble_mesh-android_api-v2_low-release'
+//ble_mesh source code
+def sourceCodeExists = new File('../ble_mesh-android_api-v2').exists()
+if (sourceCodeExists) {
+    include ':ble_mesh-android_api-v2_high', ':ble_mesh-android_api-v2_low'
+    project(':ble_mesh-android_api-v2_high').projectDir = new File('../ble_mesh-android_api-v2/ble_mesh-android_api-v2_high')
+    project(':ble_mesh-android_api-v2_low').projectDir = new File('../ble_mesh-android_api-v2/ble_mesh-android_api-v2_low')
+}

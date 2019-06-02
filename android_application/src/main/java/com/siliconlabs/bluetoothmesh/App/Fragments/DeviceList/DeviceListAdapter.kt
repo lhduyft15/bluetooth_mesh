@@ -29,14 +29,10 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
         deviceItemListener.onDeleteClickListener(item)
     }
 
-    fun onItemClickListener(view: View) {
-
-    }
-
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val deviceInfo = getItem(position)
-        var holder: ViewHolder
-        var view: View
+        val holder: ViewHolder
+        val view: View
 
         if (convertView == null) {
             view = LayoutInflater.from(context).inflate(R.layout.devices_adapter, parent, false)
@@ -60,12 +56,7 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
             when (deviceInfo.functionality) {
                 DeviceFunctionality.FUNCTIONALITY.OnOff -> {
                     iv_device_image.setOnClickListener(ClickDeviceImageListener(deviceInfo))
-
-                    //update data sensor+++++++++++
-                    iv_update_data_sensor.setOnClickListener(ClickUpdateDataSensorListener(deviceInfo))
-
                     ll_controlls.visibility = View.GONE
-                    ll_data_sensor.visibility = View.VISIBLE
 
                     if (!networkConnectionLogic.isConnected()) {
                         iv_device_image.setImageResource(R.drawable.toggle_off)
@@ -74,33 +65,9 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
                     } else {
                         iv_device_image.setImageResource(R.drawable.toggle_off)
                     }
-
-
-                    //Control image update data**************************************************************
-                    if (!networkConnectionLogic.isConnected()) {
-                        iv_update_data_sensor.setImageResource(R.drawable.toggle_off)
-                        tv_data_sensor_value.setText("Wait")
-                    } else if (deviceInfo.onOffUpdate) {
-                        iv_update_data_sensor.setImageResource(R.drawable.toggle_on)
-                    } else {
-                        iv_update_data_sensor.setImageResource(R.drawable.toggle_off)
-                    }
-
-                    if(!networkConnectionLogic.isConnected()){
-                        tv_data_sensor_value.setText("Wait")
-                    }
-                    //else if(deviceInfo.status == null){
-                        //tv_data_sensor_value.setText("NULL")
-                    //}
-                    else{
-                        //tv_data_sensor_value.setText(deviceInfo.status.toString())
-                        //tv_data_sensor_value.setText("Wait")
-                    }
-                    //***************************************************************************************
                 }
                 DeviceFunctionality.FUNCTIONALITY.OnOffClient -> {
                     ll_controlls.visibility = View.GONE
-                    ll_data_sensor.visibility = View.GONE
 
                     if (!networkConnectionLogic.isConnected()) {
                         iv_device_image.setImageResource(R.drawable.toggle_off)
@@ -130,7 +97,6 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
                 }
                 DeviceFunctionality.FUNCTIONALITY.LightnessClient -> {
                     ll_controlls.visibility = View.GONE
-                    ll_data_sensor.visibility = View.GONE
 
                     if (!networkConnectionLogic.isConnected()) {
                         iv_device_image.setImageResource(R.drawable.toggle_off)
@@ -140,11 +106,7 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
                 }
                 DeviceFunctionality.FUNCTIONALITY.Level -> {
                     iv_device_image.setOnClickListener(ClickDeviceImageListener(deviceInfo))
-                    //update data sensor
-                    iv_update_data_sensor.setOnClickListener(ClickUpdateDataSensorListener(deviceInfo))
-
-                    ll_controlls.visibility = View.GONE
-                    ll_data_sensor.visibility = View.VISIBLE
+                    ll_controlls.visibility = View.VISIBLE
                     ll_slider.visibility = View.VISIBLE
                     ll_slider_CTL.visibility = View.GONE
                     sb_level_control.progress = deviceInfo.levelPercentage
@@ -161,17 +123,6 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
                         iv_device_image.setImageResource(R.drawable.lamp_off)
                         setEnabledControls(this, true)
                     }
-
-
-                    //Control image update data
-                    if (!networkConnectionLogic.isConnected()) {
-                        iv_update_data_sensor.setImageResource(R.drawable.toggle_off)
-                    } else if (deviceInfo.onOffUpdate) {
-                        iv_update_data_sensor.setImageResource(R.drawable.toggle_on)
-                    } else {
-                        iv_update_data_sensor.setImageResource(R.drawable.toggle_off)
-                    }
-
                 }
                 DeviceFunctionality.FUNCTIONALITY.CTL -> {
                     iv_device_image.setOnClickListener(ClickDeviceImageListener(deviceInfo))
@@ -205,7 +156,6 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
                 }
                 DeviceFunctionality.FUNCTIONALITY.CTLClient -> {
                     ll_controlls.visibility = View.GONE
-                    ll_data_sensor.visibility = View.GONE
 
                     if (!networkConnectionLogic.isConnected()) {
                         iv_device_image.setImageResource(R.drawable.lamp_off)
@@ -241,11 +191,6 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
 
     private fun setEnabledControls(view: View, enabled: Boolean) {
         setEnabledView(view.iv_device_image, enabled)
-
-        //Update datasensor
-        setEnabledView(view.iv_update_data_sensor,enabled)
-        setEnabledView(view.tv_data_sensor_value,enabled)
-
         setEnabledView(view.sb_level_control, enabled)
         setEnabledView(view.tv_level_value, enabled)
         setEnabledView(view.sb_temperature_control, enabled)
@@ -292,18 +237,9 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
             this@DeviceListAdapter.deviceItemListener.onClickDeviceImageListener(deviceInfo)
         }
     }
-        //Update data sensor
-    inner class ClickUpdateDataSensorListener(private val deviceInfo: MeshNode) : View.OnClickListener{
-        override fun onClick(v: View?) {
-            this@DeviceListAdapter.deviceItemListener.onClickUpdateDataSensorListener(deviceInfo)
-        }
-    }
 
     interface DeviceItemListener {
         fun onClickDeviceImageListener(deviceInfo: MeshNode)
-
-        //Update date sensor
-        fun onClickUpdateDataSensorListener(deviceInfo: MeshNode)
 
         fun onSeekBarChangeListener(deviceInfo: MeshNode, levelPercentage: Int, temperaturePercentage: Int? = null, deltaUvPercentage: Int? = null)
 

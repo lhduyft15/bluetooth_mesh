@@ -114,7 +114,6 @@
     <string name="device_adapter_temperature_value">%d K</string>
     <string name="device_adapter_delta_uv_label">Delta UV</string>
     <string name="device_adapter_delta_uv_value">%.2f</string>
-    <string name="device_adapter_data_sensor_label">Data sensor</string>
     <string name="device_adapter_remove_device_error">Error deleting device</string>
 
     <string name="device_config_connecting_error">Connecting error: %1$s</string>
@@ -198,6 +197,7 @@
     <string name="network_fragment_toast_connection_timeout">Connection timeout</string>
 
     <string name="dialog_about_app_version">APP Version: v%s</string>
+    <string name="dialog_about_api_version">API Version: v%s</string>
     <string name="dialog_about_adk_version">ADK Version: v%s</string>
     <string name="dialog_about_copyright">Copyright \u00A9 2019| All Rights Reserved</string>
 

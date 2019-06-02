@@ -22,7 +22,7 @@ import java.util.concurrent.Executors
  * @author Comarch S.A.
  */
 class NetworkListPresenter(private val networkListView: NetworkListView, private val meshLogic: MeshLogic, private val meshNetworkManager: MeshNetworkManager, val networkConnectionLogic: NetworkConnectionLogic, val meshNodeManager: MeshNodeManager) : BasePresenter {
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     private val network = meshLogic.currentNetwork!!
 

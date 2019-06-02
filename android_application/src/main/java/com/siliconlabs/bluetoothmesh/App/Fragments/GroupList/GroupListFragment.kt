@@ -35,7 +35,7 @@ import javax.inject.Inject
  * @author Comarch S.A.
  */
 class GroupListFragment : DaggerFragment(), GroupListView {
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     @Inject
     lateinit var groupListPresenter: GroupListPresenter

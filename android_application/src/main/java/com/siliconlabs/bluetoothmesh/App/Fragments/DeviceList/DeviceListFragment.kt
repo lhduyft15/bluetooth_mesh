@@ -54,7 +54,7 @@ class DeviceListFragment : DaggerFragment(), DeviceListView, DeviceEditionDialog
         }
     }
 
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     @Inject
     lateinit var deviceListPresenter: DeviceListPresenter
@@ -76,10 +76,6 @@ class DeviceListFragment : DaggerFragment(), DeviceListView, DeviceEditionDialog
         devices_list.choiceMode = ListView.CHOICE_MODE_MULTIPLE_MODAL
         devices_list.setMultiChoiceModeListener(devicesListAdapter)
         devices_list.emptyView = ll_empty_view
-
-        devices_list.setOnItemClickListener { _, view, position, _ ->
-            devicesListAdapter?.onItemClickListener(view)
-        }
     }
 
     override fun onResume() {
@@ -147,8 +143,8 @@ class DeviceListFragment : DaggerFragment(), DeviceListView, DeviceEditionDialog
         }
     }
 
-    override fun showDeleteDeviceDialog(devicesInfo: List<MeshNode>) {
-        deviceEditionDialogs.showDeleteDeviceDialog(devicesInfo)
+    override fun showDeleteDeviceDialog(devicesInfos: List<MeshNode>) {
+        deviceEditionDialogs.showDeleteDeviceDialog(devicesInfos)
         devicesListAdapter?.finishActionMode()
     }
 

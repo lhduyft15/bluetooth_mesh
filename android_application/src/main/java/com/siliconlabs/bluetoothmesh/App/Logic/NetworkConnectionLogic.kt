@@ -23,7 +23,7 @@ import java.util.*
  * @author Comarch S.A.
  */
 class NetworkConnectionLogic(private val context: Context, private val connectableDeviceHelper: ConnectableDeviceHelper, private val bluetoothLeScanLogic: BluetoothScanner) : BluetoothConnectableDevice.DeviceConnectionCallback {
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     private val uiHandler: Handler = Handler(Looper.getMainLooper())
 

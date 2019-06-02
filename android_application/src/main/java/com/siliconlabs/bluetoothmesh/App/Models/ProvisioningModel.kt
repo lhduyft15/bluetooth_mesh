@@ -14,7 +14,7 @@ import com.siliconlabs.bluetoothmesh.App.Logic.MeshLogic
 import com.siliconlabs.bluetoothmesh.App.Models.ProvisioningStatusPropagator.ProvisioningStatus
 
 class ProvisioningModel(val meshLogic: MeshLogic, val meshNodeManager: MeshNodeManager) : ProvisioningCallback {
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     val provisioningStatusPropagator = ProvisioningStatusPropagator()
 

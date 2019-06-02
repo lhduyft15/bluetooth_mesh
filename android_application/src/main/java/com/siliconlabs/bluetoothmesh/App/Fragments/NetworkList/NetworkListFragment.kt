@@ -33,7 +33,7 @@ import javax.inject.Inject
  * @author Comarch S.A.
  */
 class NetworkListFragment : DaggerFragment(), NetworkListAdapter.NetworkItemListener, NetworkListView {
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     @Inject
     lateinit var networkListPresenter: NetworkListPresenter
@@ -57,7 +57,10 @@ class NetworkListFragment : DaggerFragment(), NetworkListAdapter.NetworkItemList
 
         network_list.setOnItemClickListener { _, _, position, _ ->
             networkListAdapter?.apply {
-                onNetworkClickListener(getItem(position))
+                val subnet = getItem(position)
+                subnet?.let {
+                    onNetworkClickListener(it)
+                }
             }
         }
 
@@ -170,13 +173,13 @@ class NetworkListFragment : DaggerFragment(), NetworkListAdapter.NetworkItemList
                         view.network_name_text_input_edit.error = getString(R.string.network_update_error_empty_name_message)
                     }
                 }
-                setNegativeButton(R.string.dialog_negative_cancel) { dialog, _ ->
+                setNegativeButton(R.string.dialog_negative_cancel) { _, _ ->
                 }
             }
 
             val dialog = builder.create()
             dialog.apply {
-                window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
+                window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
                 show()
             }
         }
@@ -203,7 +206,7 @@ class NetworkListFragment : DaggerFragment(), NetworkListAdapter.NetworkItemList
 
             val dialog = builder.create()
             dialog.apply {
-                window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
+                window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
                 show()
             }
         }

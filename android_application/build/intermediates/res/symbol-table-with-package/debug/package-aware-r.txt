@@ -1174,7 +1174,6 @@ id item_touch_helper_previous_elevation
 id iv_config
 id iv_device_image
 id iv_switch
-id iv_update_data_sensor
 id key_app
 id key_dev
 id key_net
@@ -1186,7 +1185,6 @@ id line3
 id listMode
 id list_item
 id ll_controlls
-id ll_data_sensor
 id ll_empty_view
 id ll_light_control
 id ll_master_control
@@ -1320,7 +1318,6 @@ id transition_scene_layoutid_cache
 id transition_transform
 id tv_adk_version
 id tv_app_version
-id tv_data_sensor_value
 id tv_device_address
 id tv_device_id
 id tv_device_name
@@ -1501,7 +1498,6 @@ string control_group_device_light_label
 string control_group_device_master_control_label
 string control_group_device_switch_label
 string control_group_not_connected_to_mesh_network
-string device_adapter_data_sensor_label
 string device_adapter_delta_uv_label
 string device_adapter_delta_uv_value
 string device_adapter_empty_list_message

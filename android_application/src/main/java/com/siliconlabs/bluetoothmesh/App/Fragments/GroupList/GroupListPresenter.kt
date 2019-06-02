@@ -19,7 +19,7 @@ import java.util.concurrent.Executors
  * @author Comarch S.A.
  */
 class GroupListPresenter(private val groupListView: GroupListView, private val meshLogic: MeshLogic, private val meshNetworkManager: MeshNetworkManager) : BasePresenter, GroupListAdapter.GroupItemListener {
-    private val TAG: String = javaClass.canonicalName
+    private val TAG: String = javaClass.canonicalName!!
 
     private val subnet: Subnet = meshLogic.currentSubnet!!
 
