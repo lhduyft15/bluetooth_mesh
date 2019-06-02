@@ -7,7 +7,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:orientation="vertical"
-              android:background="@color/alizarin_crimson_darker"
+              android:background="@color/silicon_labs_white"
               android:padding="2dp">
     <LinearLayout
         android:layout_width="wrap_content"
@@ -18,13 +18,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/alizarin_crimson">
+            android:background="@color/alizarin_crimson_darker">
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:src="@drawable/silicon_labs_logo_white"
+                android:src="@drawable/fire_alarm_logo"
                 android:padding="5dp"
-                android:background="@color/alizarin_crimson_darker"/>
+                android:background="@color/alizarin_crimson"/>
 
         </LinearLayout>
 
@@ -34,6 +34,7 @@
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
+                android:background="@color/silicon_labs_white"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="0.85"
@@ -57,7 +58,7 @@
                         android:singleLine="true"
                         android:maxLines="1"
                         android:text="0123456789ABCDEF"
-                        android:textColor="@color/silicon_labs_white"
+                        android:textColor="@color/black"
                         android:textSize="@dimen/text_size_xlarge"
                         />
                 </LinearLayout>
@@ -72,32 +73,42 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="right"
         android:orientation="horizontal">
-        <Button
-            android:id="@+id/cancel_btn"
-            android:text="CANCEL "
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textColor="@color/silicon_labs_white"
-            android:textSize="@dimen/text_size_large"
-            android:layout_weight="0.5"
-            android:background="@color/alizarin_crimson"
-            />
-        <Space
-            android:layout_width="2dp"
-            android:layout_height="match_parent"/>
-        <Button
-            android:id="@+id/ok"
-            android:text="OK "
-            android:layout_weight="0.5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textColor="@color/silicon_labs_white"
-            android:textSize="@dimen/text_size_large"
-            android:background="@color/alizarin_crimson"/>
+
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/cancel_btn"
+                android:text="CANCEL "
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/silicon_labs_white"
+                android:textSize="@dimen/text_size_large"
+                android:layout_weight="0.5"
+                android:background="@drawable/btn_rounded_primary"
+                />
+        </LinearLayout>
+
+
+       <LinearLayout
+           android:layout_width="80dp"
+           android:layout_height="wrap_content">
+           <Button
+               android:id="@+id/ok"
+               android:text="OK "
+               android:layout_weight="0.5"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"
+               android:gravity="center"
+               android:textColor="@color/silicon_labs_white"
+               android:textSize="@dimen/text_size_large"
+               android:background="@drawable/btn_rounded_primary"/>
+       </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>

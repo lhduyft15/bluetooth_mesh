@@ -3,7 +3,7 @@
   -->
 
 <resources>
-    <string name="app_name">Bluetooth Mesh</string>
+    <string name="app_name">Fire Alarm</string>
     <string name="config_device">Config Device</string>
     <string name="config">Config</string>
     <string name="multi_choice_adapter_title">%d selected</string>

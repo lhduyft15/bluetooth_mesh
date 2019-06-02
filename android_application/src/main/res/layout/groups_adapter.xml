@@ -17,18 +17,18 @@
         android:id="@+id/cb_selected"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:buttonTint="@android:color/white"
+        android:buttonTint="@android:color/holo_red_light"
         android:clickable="false"
         android:focusable="false"
         android:padding="@dimen/adapter_item_padding"
         android:visibility="gone" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:layout_gravity="center"
         android:padding="@dimen/adapter_item_padding"
-        android:src="@drawable/home" />
+        android:src="@drawable/network" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -60,10 +60,10 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:padding="@dimen/adapter_item_padding"
-                android:src="@drawable/key_small" />
+                android:src="@drawable/key" />
 
             <TextView
                 android:id="@+id/tv_group_key_index"
@@ -79,9 +79,9 @@
 
     <ImageView
         android:id="@+id/iv_config"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_gravity="center"
         android:padding="@dimen/adapter_item_padding"
-        android:src="@drawable/baseline_settings_black_18dp" />
+        android:src="@drawable/settings" />
 </LinearLayout>

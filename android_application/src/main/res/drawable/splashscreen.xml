@@ -10,7 +10,7 @@
         android:gravity="center">
         <bitmap
             android:gravity="center"
-            android:src="@drawable/mesh_logo_splash"
+            android:src="@drawable/fire_alarm_logo"
             android:anyDensity="false"/>
     </item>
 

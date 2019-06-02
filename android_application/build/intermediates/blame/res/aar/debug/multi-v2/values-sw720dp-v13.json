@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\SiliconLabs\\SimplicityStudio\\v4\\developer\\sdks\\blemesh\\v1.4\\app\\bluetooth\\android_application\\build\\intermediates\\incremental\\mergeAarDebugResources\\merged.dir\\values-sw720dp-v13\\values-sw720dp-v13.xml",
+            "outputFile": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\incremental\\mergeAarDebugResources\\merged.dir\\values-sw720dp-v13\\values-sw720dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\SiliconLabs\\SimplicityStudio\\v4\\developer\\sdks\\blemesh\\v1.4\\app\\bluetooth\\android_application\\src\\main\\res\\values-sw720dp\\dimens.xml",
+                    "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\values-sw720dp\\dimens.xml",
                     "from": {
                         "startLines": "5,11,7,8,9,6,10",
                         "startColumns": "4,4,4,4,4,4,4",

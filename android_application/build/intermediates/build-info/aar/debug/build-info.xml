@@ -2,13 +2,13 @@
 <instant-run
     abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="27"
-    build-mode="FULL"
+    build-mode="COLD"
     density="xxhdpi"
     format="10"
     plugin-version="3.3.2"
-    timestamp="1559461807940"
-    token="4374836535005772120"
-    verifier="FULL_BUILD_REQUESTED" >
+    timestamp="1559491707090"
+    token="-3251278565510931599"
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
@@ -18,94 +18,99 @@
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="8928" />
+        duration="0" />
     <task
         name="verifier"
         duration="0" />
 
     <artifact
-        location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\resources\instant-run\aar\debug\resources-aar-debug.apk"
+        location="C:\bluetooth_mesh\android_application\build\intermediates\resources\instant-run\aar\debug\resources-aar-debug.apk"
         type="SPLIT" />
-    <artifact
-        location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\dep\dependencies.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\slices\slice_1.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\slices\slice_2.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\slices\slice_0.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\slices\slice_3.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\slices\slice_4.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\slices\slice_5.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\slices\slice_7.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\slices\slice_6.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\slices\slice_8.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\slices\slice_9.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\instant-run-apk\aar\debug\BTMeshApp-2.0.4-12.apk"
-        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1559461807940"
+        timestamp="1559486057292"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\resources\instant-run\aar\debug\resources-aar-debug.apk"
+            location="C:\bluetooth_mesh\android_application\build\intermediates\resources\instant-run\aar\debug\resources-aar-debug.apk"
             type="SPLIT" />
         <artifact
-            location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\dep\dependencies.apk"
+            location="C:\bluetooth_mesh\android_application\build\intermediates\split-apk\aar\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\slices\slice_1.apk"
+            location="C:\bluetooth_mesh\android_application\build\intermediates\split-apk\aar\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\slices\slice_2.apk"
+            location="C:\bluetooth_mesh\android_application\build\intermediates\split-apk\aar\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\slices\slice_0.apk"
+            location="C:\bluetooth_mesh\android_application\build\intermediates\split-apk\aar\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\slices\slice_3.apk"
+            location="C:\bluetooth_mesh\android_application\build\intermediates\split-apk\aar\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\slices\slice_4.apk"
+            location="C:\bluetooth_mesh\android_application\build\intermediates\split-apk\aar\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\slices\slice_5.apk"
+            location="C:\bluetooth_mesh\android_application\build\intermediates\split-apk\aar\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\slices\slice_7.apk"
+            location="C:\bluetooth_mesh\android_application\build\intermediates\split-apk\aar\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\slices\slice_6.apk"
+            location="C:\bluetooth_mesh\android_application\build\intermediates\split-apk\aar\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\slices\slice_8.apk"
+            location="C:\bluetooth_mesh\android_application\build\intermediates\split-apk\aar\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\split-apk\aar\debug\slices\slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\blemesh\v1.4\app\bluetooth\android_application\build\intermediates\instant-run-apk\aar\debug\BTMeshApp-2.0.4-12.apk"
+            location="C:\bluetooth_mesh\android_application\build\intermediates\instant-run-apk\aar\debug\BTMeshApp-2.0.4-12.apk"
             type="SPLIT_MAIN" />
+        <artifact
+            location="C:\bluetooth_mesh\android_application\build\intermediates\split-apk\aar\debug\dep\dependencies.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="R_CLASS_CHANGE"
+        timestamp="1559491115802"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\bluetooth_mesh\android_application\build\intermediates\split-apk\aar\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\bluetooth_mesh\android_application\build\intermediates\split-apk\aar\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\bluetooth_mesh\android_application\build\intermediates\split-apk\aar\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\bluetooth_mesh\android_application\build\intermediates\split-apk\aar\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\bluetooth_mesh\android_application\build\intermediates\split-apk\aar\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\bluetooth_mesh\android_application\build\intermediates\split-apk\aar\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\bluetooth_mesh\android_application\build\intermediates\split-apk\aar\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\bluetooth_mesh\android_application\build\intermediates\split-apk\aar\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\bluetooth_mesh\android_application\build\intermediates\split-apk\aar\debug\slices\slice_8.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1559491707090"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\bluetooth_mesh\android_application\build\intermediates\resources\instant-run\aar\debug\resources-aar-debug.apk"
+            type="SPLIT" />
     </build>
 
 </instant-run>

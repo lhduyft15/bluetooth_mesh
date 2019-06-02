@@ -4,6 +4,7 @@
   -->
 
 <resources>
+    <color name="toolbarbackground">#29B6F6</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
@@ -52,20 +53,21 @@
     <color name="dialog_device_config_table_dark_background">#D8D8D8</color>
 
     <!-- adapter item -->
-    <color name="adapter_item_divider">#656565</color>
-    <color name="adapter_item_background">#545454</color>
-    <color name="adapter_item_background_pressed">#656565</color>
-    <color name="adapter_item_label_color">#B3FFFFFF</color>
-    <color name="adapter_item_title_color">#FFFFFF</color>
-    <color name="adapter_item_value_color">#FFFFFF</color>
+    <color name="adapter_item_divider">#E0E0E0</color>
+    <color name="adapter_item_background">#FFFFFFFF</color>
+    <color name="adapter_item_background_pressed">#BDBDBD</color>
+    <color name="adapter_item_label_color">#FF000000</color>
+    <color name="adapter_item_title_color">#FF000000</color>
+    <color name="adapter_item_value_color">#FF000000</color>
 
 
     <!-- general -->
     <color name="black">#FF000000</color>
     <color name="transparent">#00000000</color>
-    <color name="background">#424242</color>
+    <color name="background">#E0E0E0</color>
 
     <!-- Silicon Labs Debug Mode -->
     <color name="silicon_labs_white">#FFFFFFFF</color>
+
 </resources>
 

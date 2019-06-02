@@ -1,4 +1,4 @@
-#Sun Jun 02 14:50:40 ICT 2019
+#Sun Jun 02 21:35:31 ICT 2019
 path.1=classes.dex
 path.0=classes.dex
 renamed.10=classes11.dex
@@ -10,19 +10,19 @@ renamed.5=classes6.dex
 renamed.4=classes5.dex
 renamed.3=classes4.dex
 renamed.2=classes3.dex
-base.9=C\:\\SiliconLabs\\SimplicityStudio\\v4\\developer\\sdks\\blemesh\\v1.4\\app\\bluetooth\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\17
+base.9=C\:\\bluetooth_mesh\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\12
 renamed.1=classes2.dex
-base.8=C\:\\SiliconLabs\\SimplicityStudio\\v4\\developer\\sdks\\blemesh\\v1.4\\app\\bluetooth\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\12
+base.8=C\:\\bluetooth_mesh\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\20
 renamed.0=classes.dex
-base.7=C\:\\SiliconLabs\\SimplicityStudio\\v4\\developer\\sdks\\blemesh\\v1.4\\app\\bluetooth\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\15
-base.6=C\:\\SiliconLabs\\SimplicityStudio\\v4\\developer\\sdks\\blemesh\\v1.4\\app\\bluetooth\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\21
-base.5=C\:\\SiliconLabs\\SimplicityStudio\\v4\\developer\\sdks\\blemesh\\v1.4\\app\\bluetooth\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\13
-base.4=C\:\\SiliconLabs\\SimplicityStudio\\v4\\developer\\sdks\\blemesh\\v1.4\\app\\bluetooth\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\11
-base.3=C\:\\SiliconLabs\\SimplicityStudio\\v4\\developer\\sdks\\blemesh\\v1.4\\app\\bluetooth\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\20
-base.2=C\:\\SiliconLabs\\SimplicityStudio\\v4\\developer\\sdks\\blemesh\\v1.4\\app\\bluetooth\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\18
-base.1=C\:\\SiliconLabs\\SimplicityStudio\\v4\\developer\\sdks\\blemesh\\v1.4\\app\\bluetooth\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\16
-base.0=C\:\\SiliconLabs\\SimplicityStudio\\v4\\developer\\sdks\\blemesh\\v1.4\\app\\bluetooth\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\19
-base.10=C\:\\SiliconLabs\\SimplicityStudio\\v4\\developer\\sdks\\blemesh\\v1.4\\app\\bluetooth\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\14
+base.7=C\:\\bluetooth_mesh\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\14
+base.6=C\:\\bluetooth_mesh\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\11
+base.5=C\:\\bluetooth_mesh\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\16
+base.4=C\:\\bluetooth_mesh\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\13
+base.3=C\:\\bluetooth_mesh\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\18
+base.2=C\:\\bluetooth_mesh\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\15
+base.1=C\:\\bluetooth_mesh\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\17
+base.0=C\:\\bluetooth_mesh\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\19
+base.10=C\:\\bluetooth_mesh\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\21
 path.10=classes.dex
 path.9=classes.dex
 path.8=classes.dex

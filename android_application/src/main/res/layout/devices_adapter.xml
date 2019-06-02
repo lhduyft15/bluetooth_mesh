@@ -17,7 +17,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:buttonTint="@android:color/white"
+        android:buttonTint="@android:color/black"
         android:clickable="false"
         android:focusable="false"
         android:padding="@dimen/adapter_item_padding"

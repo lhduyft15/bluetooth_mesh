@@ -17,6 +17,7 @@
         android:elevation="6dp"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat"
+        app:tabTextColor="@color/primary"
         app:tabIndicatorColor="@color/primary">
 
         <android.support.design.widget.TabItem
