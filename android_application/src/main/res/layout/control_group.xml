@@ -59,8 +59,8 @@
 
                 <ImageView
                     android:id="@+id/iv_switch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:padding="@dimen/adapter_item_padding"
                     android:src="@drawable/toggle_off" />
             </LinearLayout>

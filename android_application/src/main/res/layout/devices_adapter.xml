@@ -17,7 +17,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:buttonTint="@android:color/black"
+        android:buttonTint="@color/alizarin_crimson"
         android:clickable="false"
         android:focusable="false"
         android:padding="@dimen/adapter_item_padding"
@@ -68,10 +68,10 @@
 
                 <ImageView
                     android:id="@+id/iv_device_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:padding="@dimen/adapter_item_padding"
-                    android:src="@drawable/ic_unknown" />
+                    android:src="@drawable/question" />
             </LinearLayout>
 
             <LinearLayout
@@ -237,10 +237,10 @@
     <ImageView
         android:id="@+id/iv_config"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_weight="1"
         android:layout_gravity="center"
         android:padding="@dimen/adapter_item_padding"
-        android:src="@drawable/baseline_settings_black_18dp"
+        android:src="@drawable/settings"
         android:visibility="gone" />
 </LinearLayout>

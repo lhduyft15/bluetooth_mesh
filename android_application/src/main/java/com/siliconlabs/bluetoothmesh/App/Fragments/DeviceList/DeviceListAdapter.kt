@@ -164,7 +164,7 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
                     }
                 }
                 else -> {
-                    iv_device_image.setImageResource(R.drawable.ic_unknown)
+                    iv_device_image.setImageResource(R.drawable.question)
                     iv_device_image.setOnClickListener(ClickDeviceImageListener(deviceInfo))
                     ll_controlls.visibility = View.GONE
                 }

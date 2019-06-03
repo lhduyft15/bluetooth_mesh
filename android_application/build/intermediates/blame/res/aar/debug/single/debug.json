@@ -104,10 +104,6 @@
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable\\abc_list_selector_holo_light.xml"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-hdpi_key_small.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-hdpi\\key_small.png"
-    },
-    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-hdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
@@ -120,12 +116,12 @@
         "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxhdpi\\ic_mesh_green.png"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\layout-watch-v20_abc_alert_dialog_title_material.xml.flat",
-        "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\layout-watch-v20\\abc_alert_dialog_title_material.xml"
+        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-mdpi_question.png.flat",
+        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-mdpi\\question.png"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xhdpi_lamp_disabled.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xhdpi\\lamp_disabled.png"
+        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\layout-watch-v20_abc_alert_dialog_title_material.xml.flat",
+        "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\layout-watch-v20\\abc_alert_dialog_title_material.xml"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
@@ -168,10 +164,6 @@
         "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable\\inactive_button.xml"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxhdpi_key_small.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxhdpi\\key_small.png"
-    },
-    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
@@ -210,10 +202,6 @@
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-mdpi_key.png.flat",
         "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-mdpi\\key.png"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xhdpi_toggle_off.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xhdpi\\toggle_off.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\color_mtrl_chip_text_color.xml.flat",
@@ -304,20 +292,12 @@
         "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-mdpi\\delete.png"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xhdpi_toggle_on.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xhdpi\\toggle_on.png"
-    },
-    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\anim_enter.xml.flat",
         "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\anim\\enter.xml"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-mdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-mdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxhdpi_ic_unknown.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxhdpi\\ic_unknown.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\color_mtrl_btn_text_color_selector.xml.flat",
@@ -334,10 +314,6 @@
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\color_mtrl_bottom_nav_item_tint.xml.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\325cff26f47b8e4d5ae61f1c3b2f462b\\res\\color\\mtrl_bottom_nav_item_tint.xml"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxxhdpi_lamp_on.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxxhdpi\\lamp_on.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
@@ -364,20 +340,12 @@
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxxhdpi_toggle_on.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxxhdpi\\toggle_on.png"
-    },
-    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-hdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-anydpi-v21_design_ic_visibility_off.xml.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\325cff26f47b8e4d5ae61f1c3b2f462b\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxxhdpi_toggle_off.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxxhdpi\\toggle_off.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\layout_abc_alert_dialog_button_bar_material.xml.flat",
@@ -442,10 +410,6 @@
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable_splashscreen.xml.flat",
         "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable\\splashscreen.xml"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-mdpi_home.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-mdpi\\home.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
@@ -518,10 +482,6 @@
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable_ctl_gradient.xml.flat",
         "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable\\ctl_gradient.xml"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxhdpi_lamp_disabled.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxhdpi\\lamp_disabled.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\layout_abc_screen_toolbar.xml.flat",
@@ -758,10 +718,6 @@
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-mdpi_toggle_off.png.flat",
         "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-mdpi\\toggle_off.png"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxhdpi_ic_network.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxhdpi\\ic_network.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xhdpi-v4_abc_list_pressed_holo_light.9.png.flat",
@@ -1048,10 +1004,6 @@
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-hdpi_ic_blueetooth.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-hdpi\\ic_blueetooth.png"
-    },
-    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-mdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-mdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
@@ -1072,16 +1024,8 @@
         "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-hdpi\\fire_alarm_logo.png"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-hdpi_home.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-hdpi\\home.png"
-    },
-    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\mipmap-xhdpi_mesh_logo.png.flat",
         "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\mipmap-xhdpi\\mesh_logo.png"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xhdpi_home.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xhdpi\\home.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-hdpi_silicon_labs_logo_white_small.png.flat",
@@ -1098,10 +1042,6 @@
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\color_mtrl_tabs_ripple_color.xml.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\325cff26f47b8e4d5ae61f1c3b2f462b\\res\\color\\mtrl_tabs_ripple_color.xml"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxxhdpi_lamp_off.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxxhdpi\\lamp_off.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\color_abc_primary_text_material_dark.xml.flat",
@@ -1164,10 +1104,6 @@
         "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\layout\\network_screen.xml"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-mdpi_ic_network.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-mdpi\\ic_network.png"
-    },
-    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
@@ -1210,10 +1146,6 @@
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-xxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-hdpi_ic_network.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-hdpi\\ic_network.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
@@ -1270,14 +1202,6 @@
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxxhdpi_ic_unknown.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxxhdpi\\ic_unknown.png"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-mdpi_key_small.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-mdpi\\key_small.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-hdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
@@ -1352,6 +1276,10 @@
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-mdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-mdpi_colorcircle.png.flat",
+        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-mdpi\\colorcircle.png"
+    },
+    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\mipmap-xhdpi_fire_alarm_logo.png.flat",
         "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\mipmap-xhdpi\\fire_alarm_logo.png"
     },
@@ -1424,10 +1352,6 @@
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\485450fcbbb1a9ec16684ed7a81c540e\\res\\layout-v21\\notification_template_custom_big.xml"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xhdpi_ic_unknown.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xhdpi\\ic_unknown.png"
-    },
-    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\interpolator-v21_mtrl_fast_out_linear_in.xml.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\325cff26f47b8e4d5ae61f1c3b2f462b\\res\\interpolator-v21\\mtrl_fast_out_linear_in.xml"
     },
@@ -1448,10 +1372,6 @@
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-mdpi-v4\\abc_text_select_handle_middle_mtrl_light.png"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxxhdpi_ic_blueetooth.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxxhdpi\\ic_blueetooth.png"
-    },
-    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-mdpi_ic_mesh_yellow.png.flat",
         "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-mdpi\\ic_mesh_yellow.png"
     },
@@ -1464,10 +1384,6 @@
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\325cff26f47b8e4d5ae61f1c3b2f462b\\res\\interpolator\\mtrl_linear.xml"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxxhdpi_ic_network.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxxhdpi\\ic_network.png"
-    },
-    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-hdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
@@ -1478,10 +1394,6 @@
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\color_abc_hint_foreground_material_dark.xml.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\color\\abc_hint_foreground_material_dark.xml"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-hdpi_ic_unknown.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-hdpi\\ic_unknown.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-mdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -1522,10 +1434,6 @@
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-mdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-mdpi_ic_unknown.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-mdpi\\ic_unknown.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\layout_abc_alert_dialog_material.xml.flat",
@@ -1592,20 +1500,12 @@
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-xxxhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-hdpi_lamp_disabled.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-hdpi\\lamp_disabled.png"
-    },
-    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxhdpi_delete.png.flat",
         "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxhdpi\\delete.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxxhdpi_ic_mesh_yellow.png.flat",
         "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxxhdpi\\ic_mesh_yellow.png"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xhdpi_lamp_off.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xhdpi\\lamp_off.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable_ic_mtrl_chip_checked_black.xml.flat",
@@ -1668,20 +1568,12 @@
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\325cff26f47b8e4d5ae61f1c3b2f462b\\res\\drawable-v21\\design_password_eye.xml"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxhdpi_toggle_off.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxhdpi\\toggle_off.png"
-    },
-    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-hdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable_abc_item_background_holo_dark.xml.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable\\abc_item_background_holo_dark.xml"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-hdpi_lamp_off.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-hdpi\\lamp_off.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xhdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
@@ -1708,10 +1600,6 @@
         "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\xml\\filepaths.xml"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-mdpi_ic_blueetooth.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-mdpi\\ic_blueetooth.png"
-    },
-    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-xxhdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
     },
@@ -1722,6 +1610,10 @@
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-mdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-mdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-mdpi_bluetooth.png.flat",
+        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-mdpi\\bluetooth.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\layout_abc_activity_chooser_view.xml.flat",
@@ -1754,10 +1646,6 @@
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-ldrtl-hdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xhdpi_ic_blueetooth.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xhdpi\\ic_blueetooth.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\layout_design_navigation_item_subheader.xml.flat",
@@ -1816,10 +1704,6 @@
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-mdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xhdpi_key_small.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xhdpi\\key_small.png"
-    },
-    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\layout_groups_screen.xml.flat",
         "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\layout\\groups_screen.xml"
     },
@@ -1834,10 +1718,6 @@
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\layout_abc_popup_menu_item_layout.xml.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\layout\\abc_popup_menu_item_layout.xml"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xhdpi_lamp_on.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xhdpi\\lamp_on.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xhdpi_baseline_settings_black_18dp.png.flat",
@@ -1944,10 +1824,6 @@
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxhdpi_toggle_on.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxhdpi\\toggle_on.png"
-    },
-    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\layout_dialog_network_edit.xml.flat",
         "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\layout\\dialog_network_edit.xml"
     },
@@ -1962,10 +1838,6 @@
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxhdpi_home.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxhdpi\\home.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\menu_menu_groups_toolbar.xml.flat",
@@ -1994,10 +1866,6 @@
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\color_mtrl_tabs_legacy_text_color_selector.xml.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\325cff26f47b8e4d5ae61f1c3b2f462b\\res\\color\\mtrl_tabs_legacy_text_color_selector.xml"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-hdpi_toggle_off.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-hdpi\\toggle_off.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xhdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
@@ -2070,14 +1938,6 @@
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable_ic_mtrl_chip_checked_circle.xml.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\325cff26f47b8e4d5ae61f1c3b2f462b\\res\\drawable\\ic_mtrl_chip_checked_circle.xml"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxhdpi_lamp_on.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxhdpi\\lamp_on.png"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-hdpi_toggle_on.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-hdpi\\toggle_on.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
@@ -2160,10 +2020,6 @@
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable\\abc_seekbar_track_material.xml"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxxhdpi_lamp_disabled.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxxhdpi\\lamp_disabled.png"
-    },
-    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
@@ -2178,10 +2034,6 @@
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_36dp.png"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxxhdpi_home.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxxhdpi\\home.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-mdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
@@ -2220,10 +2072,6 @@
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-hdpi_lamp_on.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-hdpi\\lamp_on.png"
-    },
-    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\color_switch_thumb_material_dark.xml.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\color\\switch_thumb_material_dark.xml"
     },
@@ -2256,10 +2104,6 @@
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xhdpi_ic_network.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xhdpi\\ic_network.png"
-    },
-    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxxhdpi_ic_mesh_red.png.flat",
         "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxxhdpi\\ic_mesh_red.png"
     },
@@ -2284,10 +2128,6 @@
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\layout\\abc_tooltip.xml"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxhdpi_ic_blueetooth.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxhdpi\\ic_blueetooth.png"
-    },
-    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\layout_mtrl_layout_snackbar_include.xml.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\325cff26f47b8e4d5ae61f1c3b2f462b\\res\\layout\\mtrl_layout_snackbar_include.xml"
     },
@@ -2300,10 +2140,6 @@
         "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\layout\\auth_request_dialog.xml"
     },
     {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxhdpi_lamp_off.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxhdpi\\lamp_off.png"
-    },
-    {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xhdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
@@ -2314,10 +2150,6 @@
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-hdpi-v4_abc_list_focused_holo.9.png.flat",
         "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\drawable-hdpi-v4\\abc_list_focused_holo.9.png"
-    },
-    {
-        "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxxhdpi_key_small.png.flat",
-        "source": "C:\\bluetooth_mesh\\android_application\\src\\main\\res\\drawable-xxxhdpi\\key_small.png"
     },
     {
         "merged": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\res\\merged\\aar\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
