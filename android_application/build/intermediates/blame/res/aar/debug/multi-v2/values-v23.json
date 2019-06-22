@@ -4,7 +4,7 @@
             "outputFile": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\incremental\\mergeAarDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\302b49a46cc325980c10622bdfbeda19\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-28.0.0.aar\\1e4cae6bfd8a1b905615ac654f17af83\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-28.0.0.aar\\a6104db05ad83a867e7364850fa42b0b\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

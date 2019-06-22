@@ -40,9 +40,8 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_width="277dp"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                     <TextView
@@ -53,25 +52,128 @@
                         android:padding="@dimen/adapter_item_padding"
                         android:text="Generic Network"
                         android:textColor="@color/adapter_item_title_color"
-                        android:textSize="@dimen/adapter_label_big_size" />
-
-                    <TextView
-                        android:id="@+id/tv_device_id"
+                        android:textSize="@dimen/adapter_label_big_size"
+                        android:textStyle="bold" />
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="@dimen/adapter_item_padding"
-                        android:text="0"
-                        android:textColor="@color/adapter_item_label_color"
-                        android:textSize="@dimen/adapter_label_medium_size" />
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="5dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:src="@drawable/key"
+                            android:layout_marginTop="5dp"
+                            android:layout_height="20dp" />
+                        <TextView
+                            android:id="@+id/tv_device_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/adapter_item_padding"
+                            android:text="0"
+                            android:layout_marginLeft="5dp"
+                            android:textColor="@color/adapter_item_label_color"
+                            android:textSize="@dimen/adapter_label_medium_size" />
+                    </LinearLayout>
+
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/iv_device_image"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:padding="@dimen/adapter_item_padding"
                     android:src="@drawable/question" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="7dp"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/ivStatus"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/nodeoff" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="Disconnected"
+                                android:id="@+id/tvStatus"
+                                android:layout_marginTop="6dp"
+                                android:textColor="@color/adapter_item_label_color"
+                                android:textSize="11dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="4dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="3dp"
+                                android:src="@drawable/battery" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="100"
+                                android:id="@+id/tvBattery"
+                                android:textColor="@color/adapter_item_label_color"
+                                android:textSize="11dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginLeft="6dp"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text=" %"
+                                android:textColor="@color/adapter_item_label_color"
+                                android:textSize="11dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:id="@+id/ivAlarmSignal"
+                        android:src="@drawable/alarmsignaloff"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginLeft="180dp"
+                        android:layout_height="60dp" />
+
+                </LinearLayout>
+
+
+
+
+
+
             </LinearLayout>
 
             <LinearLayout
@@ -231,6 +333,7 @@
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 

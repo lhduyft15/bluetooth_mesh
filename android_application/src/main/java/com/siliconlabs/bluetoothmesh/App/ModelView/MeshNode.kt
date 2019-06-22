@@ -16,5 +16,8 @@ data class MeshNode(val node: Node) {
     var lightnessPercentage = 0
     var temperaturePercentage = 0
     var deltaUvPercentage = 0
+    var heartBeat  = 0
+    var battery = 0
+    var alarmSignal = 0
     var functionality: DeviceFunctionality.FUNCTIONALITY = DeviceFunctionality.FUNCTIONALITY.Unknown
 }

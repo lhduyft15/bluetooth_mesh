@@ -13,12 +13,12 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/background"
+        android:background="#FAFAFA"
         android:elevation="6dp"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat"
-        app:tabTextColor="@color/primary"
-        app:tabIndicatorColor="@color/primary">
+        app:tabIndicatorColor="@color/primary"
+        app:tabTextColor="@color/primary">
 
         <android.support.design.widget.TabItem
             android:layout_width="wrap_content"

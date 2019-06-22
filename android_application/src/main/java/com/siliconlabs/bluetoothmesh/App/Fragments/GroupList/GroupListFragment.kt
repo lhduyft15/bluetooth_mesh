@@ -64,9 +64,9 @@ class GroupListFragment : DaggerFragment(), GroupListView {
 
             override fun onScroll(view: AbsListView?, firstVisibleItem: Int, visibleItemCount: Int, totalItemCount: Int) {
                 if (lastFirstVisibleItem < firstVisibleItem) {
-                    fab_add_group.hide()
+                    fab_add_group.visibility = View.GONE
                 } else if (lastFirstVisibleItem > firstVisibleItem) {
-                    fab_add_group.show()
+                    fab_add_group.visibility = View.VISIBLE
                 }
 
                 lastFirstVisibleItem = firstVisibleItem

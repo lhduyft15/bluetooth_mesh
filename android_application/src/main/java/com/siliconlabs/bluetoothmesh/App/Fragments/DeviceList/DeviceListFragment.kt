@@ -4,7 +4,9 @@
 
 package com.siliconlabs.bluetoothmesh.App.Fragments.DeviceList
 
+import android.app.ProgressDialog
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,7 +29,9 @@ import javax.inject.Inject
 /**
  * @author Comarch S.A.
  */
+
 class DeviceListFragment : DaggerFragment(), DeviceListView, DeviceEditionDialogs.ActivityProvider, DeviceEditionDialogsPresenter.ParentView {
+
 
     override fun startConfigDevice(deviceInfo: MeshNode) {
         deviceEditionDialogsPresenter.showDeviceConfigDialog(deviceInfo)
@@ -62,11 +66,13 @@ class DeviceListFragment : DaggerFragment(), DeviceListView, DeviceEditionDialog
     private var devicesListAdapter: DeviceListAdapter? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
         return inflater.inflate(R.layout.devices_screen, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val progressDialog = ProgressDialog(context!!)
         deviceEditionDialogs = DeviceEditionDialogs(this, deviceListPresenter.meshLogic)
         deviceEditionDialogsPresenter = DeviceEditionDialogsPresenter(deviceEditionDialogs, this, deviceListPresenter.meshLogic, deviceListPresenter.meshNodeManager)
         deviceEditionDialogs.deviceEditionDialogsListener = deviceEditionDialogsPresenter
@@ -76,6 +82,15 @@ class DeviceListFragment : DaggerFragment(), DeviceListView, DeviceEditionDialog
         devices_list.choiceMode = ListView.CHOICE_MODE_MULTIPLE_MODAL
         devices_list.setMultiChoiceModeListener(devicesListAdapter)
         devices_list.emptyView = ll_empty_view
+
+
+
+        scanUpdateStatusOfNode.setOnClickListener {
+            progressDialog.setMessage("Updating status device")
+            progressDialog.show()
+            Handler().postDelayed({progressDialog.dismiss()},2000)
+            deviceListPresenter.onChangeDeviceStatus()
+        }
     }
 
     override fun onResume() {
@@ -177,5 +192,7 @@ class DeviceListFragment : DaggerFragment(), DeviceListView, DeviceEditionDialog
             }
         }
     }
+
+
 
 }

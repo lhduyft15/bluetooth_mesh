@@ -4,7 +4,7 @@
             "outputFile": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\incremental\\mergeAarDebugResources\\merged.dir\\values-v28\\values-v28.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d938fb8a5467b3210825f16b5503aa04\\res\\values-v28\\values-v28.xml",
+                    "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\302b49a46cc325980c10622bdfbeda19\\res\\values-v28\\values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",

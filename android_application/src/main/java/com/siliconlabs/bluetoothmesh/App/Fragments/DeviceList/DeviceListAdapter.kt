@@ -30,9 +30,11 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+
         val deviceInfo = getItem(position)
         val holder: ViewHolder
         val view: View
+
 
         if (convertView == null) {
             view = LayoutInflater.from(context).inflate(R.layout.devices_adapter, parent, false)
@@ -47,6 +49,26 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
             tv_device_name.text = deviceInfo.node.name
             tv_device_id.text = deviceInfo.node.primaryElementAddress?.toString()
 
+            //----------------------------------------------------------
+            if(deviceInfo.heartBeat == 1){
+                tvStatus.text = "Connectec"
+                ivStatus.setImageResource(R.drawable.nodeon)
+            }
+            else{
+                tvStatus.text = "Disconnected"
+                ivStatus.setImageResource(R.drawable.nodeoff)
+            }
+
+            if(deviceInfo.alarmSignal == 1){
+                ivAlarmSignal.setImageResource(R.drawable.alarmsignalon)
+            }
+            else{
+                ivAlarmSignal.setImageResource(R.drawable.alarmsignaloff)
+            }
+
+            tvBattery.text = deviceInfo.battery.toString()
+
+            //------------------------------------------------------------
             cb_selected.isChecked = selectedItemsIds.indexOfKey(position) >= 0
 
             iv_config.setOnClickListener {
@@ -105,8 +127,10 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
                     }
                 }
                 DeviceFunctionality.FUNCTIONALITY.Level -> {
+
                     iv_device_image.setOnClickListener(ClickDeviceImageListener(deviceInfo))
-                    ll_controlls.visibility = View.VISIBLE
+
+                    ll_controlls.visibility = View.GONE
                     ll_slider.visibility = View.VISIBLE
                     ll_slider_CTL.visibility = View.GONE
                     sb_level_control.progress = deviceInfo.levelPercentage
@@ -238,6 +262,12 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
         }
     }
 
+//    inner class ClickScanUpdateStatusNodeImageListener(private val deviceInfo: MeshNode) : View.OnClickListener {
+//        override fun onClick(v: View?) {
+//            this@DeviceListAdapter.deviceItemListener.onStatusNodeListener(deviceInfo)
+//        }
+//    }
+
     interface DeviceItemListener {
         fun onClickDeviceImageListener(deviceInfo: MeshNode)
 
@@ -246,6 +276,8 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
         fun onDeleteClickListener(deviceInfo: List<MeshNode>)
 
         fun onConfigClickListener(deviceInfo: MeshNode)
+
+        //fun onStatusNodeListener(deviceInfo: MeshNode)
     }
 
     private class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
