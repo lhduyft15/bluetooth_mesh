@@ -69,9 +69,9 @@ class NetworkListFragment : DaggerFragment(), NetworkListAdapter.NetworkItemList
 
             override fun onScroll(view: AbsListView?, firstVisibleItem: Int, visibleItemCount: Int, totalItemCount: Int) {
                 if (lastFirstVisibleItem < firstVisibleItem) {
-                    fab_add_network.visibility =  View.GONE
+                    fab_add_network.hide()
                 } else if (lastFirstVisibleItem > firstVisibleItem) {
-                    fab_add_network.visibility = View.VISIBLE
+                    fab_add_network.show()
                 }
 
                 lastFirstVisibleItem = firstVisibleItem
