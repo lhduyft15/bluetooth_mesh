@@ -166,13 +166,22 @@ class ControlGroupPresenter(private val controlGroupView: ControlGroupView, val 
                 deviceInfo.onOffState = newOnOffState
             }
             DeviceFunctionality.FUNCTIONALITY.Level -> {
-                var newLevelPercentage = 100
-                if (deviceInfo.levelPercentage > 0) {
-                    newLevelPercentage = 0
-                }
+//                var newLevelPercentage = 100
+//                if (deviceInfo.levelPercentage > 0) {
+//                    newLevelPercentage = 0
+//                }
+//
+//                nodeElementControl.setLevel(newLevelPercentage, this)
+//                deviceInfo.levelPercentage = newLevelPercentage
 
-                nodeElementControl.setLevel(newLevelPercentage, this)
-                deviceInfo.levelPercentage = newLevelPercentage
+                val newOnOffState = !deviceInfo.onOffState
+                if(newOnOffState){
+                    nodeElementControl.setLevel(100, this)
+                }
+                else{
+                    nodeElementControl.setLevel(0, this)
+                }
+                deviceInfo.onOffState = newOnOffState
             }
             DeviceFunctionality.FUNCTIONALITY.Lightness -> {
                 var newLightnessPercentage = 100
@@ -264,6 +273,18 @@ class ControlGroupPresenter(private val controlGroupView: ControlGroupView, val 
                 statusOfNodes = checkStatusNode(data)
 
                 Log.d("DATA FINAL",statusOfNodes.toString())
+
+                nodes.forEach {
+                    for(index in statusOfNodes.indices){
+                        if(it.node.primaryElementAddress == statusOfNodes[index].unicastAddress){
+                            it.heartBeat = statusOfNodes[index].heartBeat
+                            it.battery = statusOfNodes[index].battery
+                            it.alarmSignal = statusOfNodes[index].alarmSignal
+                        }
+                    }
+                }
+
+                controlGroupView.refreshView()
             }
         }
     }
@@ -315,15 +336,5 @@ class ControlGroupPresenter(private val controlGroupView: ControlGroupView, val 
 
     fun onChangeStatusGroup(){
         scanAdvertiseBle()
-
-        nodes.forEach {
-            for(index in statusOfNodes.indices){
-                if(it.node.primaryElementAddress == statusOfNodes[index].unicastAddress){
-                    it.heartBeat = statusOfNodes[index].heartBeat
-                    it.battery = statusOfNodes[index].battery
-                    it.alarmSignal = statusOfNodes[index].alarmSignal
-                }
-            }
-        }
     }
 }

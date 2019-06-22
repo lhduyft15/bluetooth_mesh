@@ -6,6 +6,7 @@ package com.siliconlabs.bluetoothmesh.App.Fragments.DeviceList
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -49,9 +50,10 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
             tv_device_name.text = deviceInfo.node.name
             tv_device_id.text = deviceInfo.node.primaryElementAddress?.toString()
 
+            Log.e("&&&&","UPPPPPPPPPPP")
             //----------------------------------------------------------
             if(deviceInfo.heartBeat == 1){
-                tvStatus.text = "Connectec"
+                tvStatus.text = "Connected"
                 ivStatus.setImageResource(R.drawable.nodeon)
             }
             else{
@@ -137,15 +139,23 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
                     sb_level_control.setOnSeekBarChangeListener(ControlChangeListener(deviceInfo))
                     tv_level_value.text = context.getString(R.string.device_adapter_lightness_value).format(sb_level_control.progress)
 
+//                    if (!networkConnectionLogic.isConnected()) {
+//                        iv_device_image.setImageResource(R.drawable.lamp_disabled)
+//                        setEnabledControls(this, false)
+//                    } else if (deviceInfo.levelPercentage > 0) {
+//                        iv_device_image.setImageResource(R.drawable.lamp_on)
+//                        setEnabledControls(this, true)
+//                    } else {
+//                        iv_device_image.setImageResource(R.drawable.lamp_off)
+//                        setEnabledControls(this, true)
+//                    }
+
                     if (!networkConnectionLogic.isConnected()) {
                         iv_device_image.setImageResource(R.drawable.lamp_disabled)
-                        setEnabledControls(this, false)
-                    } else if (deviceInfo.levelPercentage > 0) {
+                    } else if (deviceInfo.onOffState) {
                         iv_device_image.setImageResource(R.drawable.lamp_on)
-                        setEnabledControls(this, true)
                     } else {
                         iv_device_image.setImageResource(R.drawable.lamp_off)
-                        setEnabledControls(this, true)
                     }
                 }
                 DeviceFunctionality.FUNCTIONALITY.CTL -> {

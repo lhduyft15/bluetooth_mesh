@@ -40,7 +40,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="277dp"
+                    android:layout_width="272dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
@@ -98,7 +98,7 @@
                     android:layout_height="match_parent">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="270dp"
                         android:orientation="vertical"
                         android:layout_marginTop="7dp"
                         android:layout_height="wrap_content">
@@ -116,7 +116,7 @@
                                 android:src="@drawable/nodeoff" />
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="150dp"
                                 android:text="Disconnected"
                                 android:id="@+id/tvStatus"
                                 android:layout_marginTop="6dp"
@@ -164,7 +164,6 @@
                         android:id="@+id/ivAlarmSignal"
                         android:src="@drawable/alarmsignaloff"
                         android:layout_marginTop="3dp"
-                        android:layout_marginLeft="180dp"
                         android:layout_height="60dp" />
 
                 </LinearLayout>

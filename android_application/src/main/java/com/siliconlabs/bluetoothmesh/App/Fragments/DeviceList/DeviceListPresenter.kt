@@ -41,7 +41,7 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
 
     override fun onResume() {
         Log.d(TAG, "onResume")
-        refreshList()
+        onChangeDeviceStatus()
         networkConnectionLogic.addListener(this)
         if (meshLogic.deviceToConfigure != null && !startedConfiguration) {
             startedConfiguration = true
@@ -77,18 +77,27 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
             DeviceFunctionality.FUNCTIONALITY.OnOff -> {
                 val newOnOffState = !deviceInfo.onOffState
 
-                //nodeElementControl.setOnOff(newOnOffState, this)
-                nodeElementControl.getOnOff(this)
+                nodeElementControl.setOnOff(newOnOffState, this)
+                //nodeElementControl.getOnOff(this)
                 deviceInfo.onOffState = newOnOffState
             }
             DeviceFunctionality.FUNCTIONALITY.Level -> {
-                var newLevelPercentage = 100
-                if (deviceInfo.levelPercentage > 0) {
-                    newLevelPercentage = 0
-                }
+ //               var newLevelPercentage = 100
+//                if (deviceInfo.levelPercentage > 0) {
+//                    newLevelPercentage = 0
+//                }
+//
 
-                nodeElementControl.setLevel(newLevelPercentage, this)
-                deviceInfo.levelPercentage = newLevelPercentage
+//                deviceInfo.levelPercentage = newLevelPercentage
+
+                val newOnOffState = !deviceInfo.onOffState
+                if(newOnOffState){
+                    nodeElementControl.setLevel(100, this)
+                }
+                else{
+                    nodeElementControl.setLevel(0, this)
+                }
+                deviceInfo.onOffState = newOnOffState
             }
             DeviceFunctionality.FUNCTIONALITY.Lightness -> {
                 var newLightnessPercentage = 100
@@ -201,10 +210,26 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
                 rawData?.forEach {
                     data.add(it)
                 }
-                Log.e("QQQQQ",data.toString())
+
                 statusOfNodes = checkStatusNode(data)
 
                 Log.d("DATA FINAL",statusOfNodes.toString())
+
+                deviceList.forEach {
+                    for(index in statusOfNodes.indices){
+
+                        if(it.node.primaryElementAddress == statusOfNodes[index].unicastAddress){
+                            it.heartBeat = statusOfNodes[index].heartBeat
+                            it.battery = statusOfNodes[index].battery
+                            it.alarmSignal = statusOfNodes[index].alarmSignal
+                        }
+
+                        Log.e("!!!!!","${it.heartBeat}--${it.battery}---${it.alarmSignal}")
+
+                    }
+                }
+
+                refreshList()
             }
         }
     }
@@ -255,15 +280,5 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
     }
     fun onChangeDeviceStatus(){
         scanAdvertiseBle()
-
-        deviceList.forEach {
-            for(index in statusOfNodes.indices){
-                if(it.node.primaryElementAddress == statusOfNodes[index].unicastAddress){
-                    it.heartBeat = statusOfNodes[index].heartBeat
-                    it.battery = statusOfNodes[index].battery
-                    it.alarmSignal = statusOfNodes[index].alarmSignal
-                }
-            }
-        }
     }
 }
