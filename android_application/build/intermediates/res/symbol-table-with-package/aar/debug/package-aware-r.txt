@@ -1309,6 +1309,7 @@ id sb_level_control
 id sb_light_control
 id sb_temperature_control
 id sb_uv_control
+id scanUpdateStatusOfGroup
 id scanUpdateStatusOfNode
 id scan_menu
 id screen

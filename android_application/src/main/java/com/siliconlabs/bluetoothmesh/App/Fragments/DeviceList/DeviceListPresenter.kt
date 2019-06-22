@@ -27,7 +27,7 @@ import kotlin.concurrent.schedule
  * @author Comarch S.A.
  */
 
-private const val SCAN_PERIOD: Long = 10000
+const val SCAN_PERIOD: Long = 10000
 class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLogic: MeshLogic, val networkConnectionLogic: NetworkConnectionLogic, val meshNodeManager: MeshNodeManager) : BasePresenter, DeviceListAdapter.DeviceItemListener, MeshElementControl.SetCallback, MeshElementControl.GetOnOffCallback, NetworkConnectionListener {
     private val TAG: String = javaClass.canonicalName!!
 

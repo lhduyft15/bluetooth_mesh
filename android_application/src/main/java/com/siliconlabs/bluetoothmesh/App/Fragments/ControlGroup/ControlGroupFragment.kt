@@ -4,7 +4,9 @@
 
 package com.siliconlabs.bluetoothmesh.App.Fragments.ControlGroup
 
+import android.app.ProgressDialog
 import android.os.Bundle
+import android.os.Handler
 import android.view.*
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -77,6 +79,7 @@ class ControlGroupFragment : DaggerFragment(), ControlGroupView, DeviceEditionDi
         devices_list.choiceMode = ListView.CHOICE_MODE_MULTIPLE_MODAL
         devices_list.setMultiChoiceModeListener(devicesListAdapter)
         devices_list.emptyView = ll_empty_view
+        val progressDialog = ProgressDialog(context!!)
 
         iv_switch.setOnClickListener {
             switchEnabled = !switchEnabled
@@ -96,6 +99,13 @@ class ControlGroupFragment : DaggerFragment(), ControlGroupView, DeviceEditionDi
                 }
             }
         })
+
+        scanUpdateStatusOfGroup.setOnClickListener {
+            progressDialog.setMessage("Updating status device")
+            progressDialog.show()
+            Handler().postDelayed({progressDialog.dismiss()},2000)
+            controlGroupPresenter.onChangeStatusGroup()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
