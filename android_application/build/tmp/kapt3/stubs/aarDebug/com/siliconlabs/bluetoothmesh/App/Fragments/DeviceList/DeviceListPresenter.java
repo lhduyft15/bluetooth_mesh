@@ -96,18 +96,18 @@ public final class DeviceListPresenter implements com.siliconlabs.bluetoothmesh.
     com.siliconlab.bluetoothmesh.adk.ErrorType error) {
     }
     
+    public final void onChangeDeviceStatus() {
+    }
+    
+    public final void scanAdvertiseBle() {
+    }
+    
     private final android.bluetooth.le.BluetoothLeScanner getBluetoothLeScanner() {
         return null;
     }
     
     private final java.util.ArrayList<com.siliconlabs.bluetoothmesh.App.statusOfNode> checkStatusNode(java.util.ArrayList<java.lang.Byte> a) {
         return null;
-    }
-    
-    public final void scanAdvertiseBle() {
-    }
-    
-    public final void onChangeDeviceStatus() {
     }
     
     @org.jetbrains.annotations.NotNull()

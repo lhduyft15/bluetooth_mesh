@@ -5,9 +5,7 @@
 package com.siliconlabs.bluetoothmesh.App.Fragments.ControlGroup
 
 import android.bluetooth.BluetoothAdapter
-import android.bluetooth.le.BluetoothLeScanner
-import android.bluetooth.le.ScanCallback
-import android.bluetooth.le.ScanResult
+import android.bluetooth.le.*
 import android.util.Log
 import android.view.View
 import com.siliconlab.bluetoothmesh.adk.ErrorType
@@ -251,28 +249,46 @@ class ControlGroupPresenter(private val controlGroupView: ControlGroupView, val 
         controlGroupView.showDeviceConfigDialog(deviceInfo)
     }
 
+    //Scan status node though BLE
+
+    fun onChangeStatusGroup(){
+        println("EEEEEEEEEEEEEEEEEEEEEEEE")
+        scanAdvertiseBle()
+    }
+
+    fun scanAdvertiseBle(){
+
+
+        println("**********Start scan************")
+        bluetoothLeScanner.startScan(bleScanner)
+
+        Timer().schedule(SCAN_PERIOD) {
+            println("***********Stop scan***********")
+            bluetoothLeScanner.stopScan(bleScanner)
+        }
+    }
+
     private val bleScanner = object : ScanCallback() {
         override fun onScanResult(callbackType: Int, result: ScanResult?) {
-
+            println("DDDDDDDDDDDDDDDDDDDDDDDD")
             Log.e("SCAN","MAC:${result?.device?.address} - Manu:${result?.scanRecord?.manufacturerSpecificData}")
             Log.e("RAW DATA","SIZE:${result?.scanRecord?.getManufacturerSpecificData(767)?.size}- DATA:${result?.scanRecord?.getManufacturerSpecificData(767)}")
 
             val rawData = result?.scanRecord?.getManufacturerSpecificData(767)
 
             if(rawData == null){
-                Log.e("DEBUG","CAN'T FIND DEVICE")
+                Log.e("DEBUG","DATA NULL")
             }
             else{
-                //Change from bytearray to byte
-                var data : ArrayList<Byte> = ArrayList()
 
+                var data : ArrayList<Byte> = ArrayList()
                 rawData?.forEach {
                     data.add(it)
                 }
-                Log.e("QQQQQ",data.toString())
+
                 statusOfNodes = checkStatusNode(data)
 
-                Log.d("DATA FINAL",statusOfNodes.toString())
+                Log.e("DATA FINAL",statusOfNodes.toString())
 
                 nodes.forEach {
                     for(index in statusOfNodes.indices){
@@ -298,9 +314,11 @@ class ControlGroupPresenter(private val controlGroupView: ControlGroupView, val 
 
     private fun checkStatusNode( a : ArrayList<Byte>) : ArrayList<statusOfNode>{
         var index = 0
-        var stt = 1
+        var stt = 1    // use to debug
         var indexMax = a.size - 2
         var statusOfNodes : ArrayList<statusOfNode> = ArrayList()
+
+
         while(index <= indexMax){
 
             var heartBeat = 0x01 and a[index].toInt()
@@ -323,18 +341,4 @@ class ControlGroupPresenter(private val controlGroupView: ControlGroupView, val 
         return statusOfNodes
     }
 
-    fun scanAdvertiseBle(){
-
-        println("**********Start scan************")
-        bluetoothLeScanner.startScan(bleScanner)
-
-        Timer().schedule(SCAN_PERIOD) {
-            println("***********Stop scan***********")
-            bluetoothLeScanner.stopScan(bleScanner)
-        }
-    }
-
-    fun onChangeStatusGroup(){
-        scanAdvertiseBle()
-    }
 }

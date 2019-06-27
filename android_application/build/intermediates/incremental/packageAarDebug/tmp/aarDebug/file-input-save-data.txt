@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Jun 22 15:25:17 ICT 2019
+#Thu Jun 27 09:38:42 ICT 2019
 17.baseType=DIRECTORY
 4.path=lib/x86/libble_mesh.so
 25.base=C\:\\bluetooth_mesh\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\17

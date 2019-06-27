@@ -5,9 +5,7 @@
 package com.siliconlabs.bluetoothmesh.App.Fragments.DeviceList
 
 import android.bluetooth.BluetoothAdapter
-import android.bluetooth.le.BluetoothLeScanner
-import android.bluetooth.le.ScanCallback
-import android.bluetooth.le.ScanResult
+import android.bluetooth.le.*
 import android.util.Log
 import com.siliconlab.bluetoothmesh.adk.ErrorType
 import com.siliconlabs.bluetoothmesh.App.BasePresenter
@@ -41,6 +39,7 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
 
     override fun onResume() {
         Log.d(TAG, "onResume")
+        refreshList()
         onChangeDeviceStatus()
         networkConnectionLogic.addListener(this)
         if (meshLogic.deviceToConfigure != null && !startedConfiguration) {
@@ -192,6 +191,22 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
         }
     }
 
+    fun onChangeDeviceStatus(){
+        scanAdvertiseBle()
+    }
+
+    fun scanAdvertiseBle(){
+
+
+        println("**********Start scan************")
+        bluetoothLeScanner.startScan(bleScanner)
+
+        Timer().schedule(SCAN_PERIOD) {
+            println("***********Stop scan***********")
+            bluetoothLeScanner.stopScan(bleScanner)
+        }
+    }
+
     private val bleScanner = object : ScanCallback() {
         override fun onScanResult(callbackType: Int, result: ScanResult?) {
 
@@ -201,10 +216,10 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
             val rawData = result?.scanRecord?.getManufacturerSpecificData(767)
 
             if(rawData == null){
-                Log.e("DEBUG","CAN'T FIND DEVICE")
+                Log.e("DEBUG","DATA NULL")
             }
             else{
-                //Change from bytearray to byte
+
                 var data : ArrayList<Byte> = ArrayList()
 
                 rawData?.forEach {
@@ -213,7 +228,7 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
 
                 statusOfNodes = checkStatusNode(data)
 
-                Log.d("DATA FINAL",statusOfNodes.toString())
+                Log.e("DATA FINAL",statusOfNodes.toString())
 
                 deviceList.forEach {
                     for(index in statusOfNodes.indices){
@@ -246,6 +261,14 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
         var stt = 1
         var indexMax = a.size - 2
         var statusOfNodes : ArrayList<statusOfNode> = ArrayList()
+
+        /*
+       * Data include : 16 nodes
+       * Each node has 2 bytes:  First Byte | Second Byte
+       *  - First Byte : 7 bits battery | 1 bit heartbeat
+       *  - Second Byte : 6 bits unicast address | 2 bits alarm signal
+       * */
+
         while(index <= indexMax){
 
             var heartBeat = 0x01 and a[index].toInt()
@@ -268,17 +291,6 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
         return statusOfNodes
     }
 
-    fun scanAdvertiseBle(){
 
-            println("**********Start scan************")
-            bluetoothLeScanner.startScan(bleScanner)
 
-            Timer().schedule(SCAN_PERIOD) {
-                println("***********Stop scan***********")
-                bluetoothLeScanner.stopScan(bleScanner)
-            }
-    }
-    fun onChangeDeviceStatus(){
-        scanAdvertiseBle()
-    }
 }

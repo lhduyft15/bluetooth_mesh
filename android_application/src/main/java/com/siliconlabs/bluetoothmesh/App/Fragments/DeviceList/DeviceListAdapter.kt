@@ -50,7 +50,6 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
             tv_device_name.text = deviceInfo.node.name
             tv_device_id.text = deviceInfo.node.primaryElementAddress?.toString()
 
-            Log.e("&&&&","UPPPPPPPPPPP")
             //----------------------------------------------------------
             if(deviceInfo.heartBeat == 1){
                 tvStatus.text = "Connected"
@@ -60,6 +59,8 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
                 tvStatus.text = "Disconnected"
                 ivStatus.setImageResource(R.drawable.nodeoff)
             }
+
+            Log.e("ALARM SIGNAL","${deviceInfo.alarmSignal}")
 
             if(deviceInfo.alarmSignal == 1){
                 ivAlarmSignal.setImageResource(R.drawable.alarmsignalon)
@@ -135,6 +136,7 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
                     ll_controlls.visibility = View.GONE
                     ll_slider.visibility = View.VISIBLE
                     ll_slider_CTL.visibility = View.GONE
+
                     sb_level_control.progress = deviceInfo.levelPercentage
                     sb_level_control.setOnSeekBarChangeListener(ControlChangeListener(deviceInfo))
                     tv_level_value.text = context.getString(R.string.device_adapter_lightness_value).format(sb_level_control.progress)
@@ -157,6 +159,7 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
                     } else {
                         iv_device_image.setImageResource(R.drawable.lamp_off)
                     }
+
                 }
                 DeviceFunctionality.FUNCTIONALITY.CTL -> {
                     iv_device_image.setOnClickListener(ClickDeviceImageListener(deviceInfo))
@@ -272,12 +275,6 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
         }
     }
 
-//    inner class ClickScanUpdateStatusNodeImageListener(private val deviceInfo: MeshNode) : View.OnClickListener {
-//        override fun onClick(v: View?) {
-//            this@DeviceListAdapter.deviceItemListener.onStatusNodeListener(deviceInfo)
-//        }
-//    }
-
     interface DeviceItemListener {
         fun onClickDeviceImageListener(deviceInfo: MeshNode)
 
@@ -287,7 +284,6 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
 
         fun onConfigClickListener(deviceInfo: MeshNode)
 
-        //fun onStatusNodeListener(deviceInfo: MeshNode)
     }
 
     private class ViewHolder(view: View) : RecyclerView.ViewHolder(view)

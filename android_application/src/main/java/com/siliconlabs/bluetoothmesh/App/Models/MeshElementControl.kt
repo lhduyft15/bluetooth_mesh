@@ -27,12 +27,12 @@ class MeshElementControl(element: Element, val group: Group) {
         controlElement.getStatus(GenericOnOff(), object : GetElementStatusCallback<GenericOnOff> {
             override fun success(element: Element?, group: Group?, value: GenericOnOff?) {
                 callback.success(value!!.state == GenericOnOff.STATE.ON)
-                Log.d("WWWW","WWWWWWWWWWWWWWWWWWWWWWW")
+
             }
 
             override fun error(element: Element?, group: Group?, error: ErrorType?) {
                 callback.error(error!!)
-                Log.d("WWWW",error.toString())
+
             }
         })
     }

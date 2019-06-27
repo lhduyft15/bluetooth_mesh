@@ -83,7 +83,8 @@ class DeviceListFragment : DaggerFragment(), DeviceListView, DeviceEditionDialog
         devices_list.setMultiChoiceModeListener(devicesListAdapter)
         devices_list.emptyView = ll_empty_view
 
-
+        //Update status node from gateway
+        deviceListPresenter.onChangeDeviceStatus()
 
         scanUpdateStatusOfNode.setOnClickListener {
             progressDialog.setMessage("Updating status device")
