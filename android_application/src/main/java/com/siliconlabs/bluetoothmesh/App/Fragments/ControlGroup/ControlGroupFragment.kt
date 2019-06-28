@@ -104,7 +104,7 @@ class ControlGroupFragment : DaggerFragment(), ControlGroupView, DeviceEditionDi
             progressDialog.setMessage("Updating status device")
             progressDialog.show()
             Handler().postDelayed({progressDialog.dismiss()},2000)
-            controlGroupPresenter.onChangeStatusGroup()
+            //controlGroupPresenter.onChangeStatusGroup()
         }
     }
 

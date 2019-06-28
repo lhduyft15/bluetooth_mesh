@@ -1062,6 +1062,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable fire_alarm_logo
 drawable firmmesh
+drawable friendnode
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable gradient_grey
@@ -1107,6 +1108,7 @@ drawable selector_adapter
 drawable selector_provision_button
 drawable selector_provision_button_background
 drawable selector_provision_button_background_selected
+drawable sensor
 drawable settings
 drawable silicon_labs_logo
 drawable silicon_labs_logo_white

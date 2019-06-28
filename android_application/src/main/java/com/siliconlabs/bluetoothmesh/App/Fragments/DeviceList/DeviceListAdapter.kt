@@ -62,11 +62,11 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
 
             Log.e("ALARM SIGNAL","${deviceInfo.alarmSignal}")
 
-            if(deviceInfo.alarmSignal == 1){
-                ivAlarmSignal.setImageResource(R.drawable.alarmsignalon)
+            if(deviceInfo.alarmSignal == 0){
+                ivAlarmSignal.setImageResource(R.drawable.alarmsignaloff)
             }
             else{
-                ivAlarmSignal.setImageResource(R.drawable.alarmsignaloff)
+                ivAlarmSignal.setImageResource(R.drawable.alarmsignalon)
             }
 
             tvBattery.text = deviceInfo.battery.toString()
@@ -152,13 +152,14 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
 //                        setEnabledControls(this, true)
 //                    }
 
-                    if (!networkConnectionLogic.isConnected()) {
-                        iv_device_image.setImageResource(R.drawable.lamp_disabled)
-                    } else if (deviceInfo.onOffState) {
-                        iv_device_image.setImageResource(R.drawable.lamp_on)
-                    } else {
-                        iv_device_image.setImageResource(R.drawable.lamp_off)
+                    if (networkConnectionLogic.isConnected()) {
+                        iv_device_image.setImageResource(R.drawable.friendnode)
                     }
+//                    else if (deviceInfo.onOffState) {
+//                        iv_device_image.setImageResource(R.drawable.lamp_on)
+//                    } else {
+//                        iv_device_image.setImageResource(R.drawable.lamp_off)
+//                    }
 
                 }
                 DeviceFunctionality.FUNCTIONALITY.CTL -> {
@@ -201,7 +202,7 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
                     }
                 }
                 else -> {
-                    iv_device_image.setImageResource(R.drawable.question)
+                    iv_device_image.setImageResource(R.drawable.sensor)
                     iv_device_image.setOnClickListener(ClickDeviceImageListener(deviceInfo))
                     ll_controlls.visibility = View.GONE
                 }

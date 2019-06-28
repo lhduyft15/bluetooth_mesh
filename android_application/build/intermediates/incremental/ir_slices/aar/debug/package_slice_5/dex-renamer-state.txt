@@ -1,4 +1,4 @@
-#Sat Jun 22 10:36:56 ICT 2019
+#Thu Jun 27 17:44:45 ICT 2019
 base.0=C\:\\bluetooth_mesh\\android_application\\build\\intermediates\\transforms\\dexMerger\\aar\\debug\\5
 path.0=classes.dex
 renamed.0=classes.dex

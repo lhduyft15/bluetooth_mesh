@@ -35,7 +35,7 @@ class ControlGroupPresenter(private val controlGroupView: ControlGroupView, val 
 
     val groupInfo = meshLogic.currentGroup!!
     val networkInfo: Subnet = meshLogic.currentSubnet!!
-    var statusOfNodes : ArrayList<statusOfNode> = ArrayList()
+    //var statusOfNodes : ArrayList<statusOfNode> = ArrayList()
 
     var nodes: Set<MeshNode> = emptySet()
 
@@ -157,20 +157,8 @@ class ControlGroupPresenter(private val controlGroupView: ControlGroupView, val 
         val nodeElementControl = MeshElementControl(deviceInfo.node.elements[0], groupInfo)
 
         when (deviceInfo.functionality) {
-            DeviceFunctionality.FUNCTIONALITY.OnOff -> {
-                val newOnOffState = !deviceInfo.onOffState
 
-                nodeElementControl.setOnOff(newOnOffState, this)
-                deviceInfo.onOffState = newOnOffState
-            }
             DeviceFunctionality.FUNCTIONALITY.Level -> {
-//                var newLevelPercentage = 100
-//                if (deviceInfo.levelPercentage > 0) {
-//                    newLevelPercentage = 0
-//                }
-//
-//                nodeElementControl.setLevel(newLevelPercentage, this)
-//                deviceInfo.levelPercentage = newLevelPercentage
 
                 val newOnOffState = !deviceInfo.onOffState
                 if(newOnOffState){
@@ -181,54 +169,12 @@ class ControlGroupPresenter(private val controlGroupView: ControlGroupView, val 
                 }
                 deviceInfo.onOffState = newOnOffState
             }
-            DeviceFunctionality.FUNCTIONALITY.Lightness -> {
-                var newLightnessPercentage = 100
-                if (deviceInfo.lightnessPercentage > 0) {
-                    newLightnessPercentage = 0
-                }
-
-                nodeElementControl.setLightness(newLightnessPercentage, this)
-                deviceInfo.lightnessPercentage = newLightnessPercentage
-            }
-            DeviceFunctionality.FUNCTIONALITY.CTL -> {
-                var newLightnessPercentage = 100
-                if (deviceInfo.lightnessPercentage > 0) {
-                    newLightnessPercentage = 0
-                }
-
-                nodeElementControl.setColorTemperature(newLightnessPercentage, deviceInfo.temperaturePercentage, deviceInfo.deltaUvPercentage, this)
-                deviceInfo.lightnessPercentage = newLightnessPercentage
-            }
         }
 
         controlGroupView.refreshView()
     }
 
     override fun onSeekBarChangeListener(deviceInfo: MeshNode, levelPercentage: Int, temperaturePercentage: Int?, deltaUvPercentage: Int?) {
-        val nodeElementControl = MeshElementControl(deviceInfo.node.elements[0], groupInfo)
-
-        when (deviceInfo.functionality) {
-            DeviceFunctionality.FUNCTIONALITY.Level -> {
-                nodeElementControl.setLevel(levelPercentage, this)
-
-                deviceInfo.levelPercentage = levelPercentage
-            }
-            DeviceFunctionality.FUNCTIONALITY.Lightness -> {
-                nodeElementControl.setLightness(levelPercentage, this)
-
-                deviceInfo.lightnessPercentage = levelPercentage
-            }
-            DeviceFunctionality.FUNCTIONALITY.CTL -> {
-                if (temperaturePercentage != null && deltaUvPercentage != null) {
-                    nodeElementControl.setColorTemperature(levelPercentage, temperaturePercentage, deltaUvPercentage, this)
-
-                    deviceInfo.lightnessPercentage = levelPercentage
-                    deviceInfo.temperaturePercentage = temperaturePercentage
-                    deviceInfo.deltaUvPercentage = deltaUvPercentage
-                }
-            }
-        }
-
         controlGroupView.refreshView()
     }
 
@@ -249,96 +195,95 @@ class ControlGroupPresenter(private val controlGroupView: ControlGroupView, val 
         controlGroupView.showDeviceConfigDialog(deviceInfo)
     }
 
-    //Scan status node though BLE
-
-    fun onChangeStatusGroup(){
-        println("EEEEEEEEEEEEEEEEEEEEEEEE")
-        scanAdvertiseBle()
-    }
-
-    fun scanAdvertiseBle(){
-
-
-        println("**********Start scan************")
-        bluetoothLeScanner.startScan(bleScanner)
-
-        Timer().schedule(SCAN_PERIOD) {
-            println("***********Stop scan***********")
-            bluetoothLeScanner.stopScan(bleScanner)
-        }
-    }
-
-    private val bleScanner = object : ScanCallback() {
-        override fun onScanResult(callbackType: Int, result: ScanResult?) {
-            println("DDDDDDDDDDDDDDDDDDDDDDDD")
-            Log.e("SCAN","MAC:${result?.device?.address} - Manu:${result?.scanRecord?.manufacturerSpecificData}")
-            Log.e("RAW DATA","SIZE:${result?.scanRecord?.getManufacturerSpecificData(767)?.size}- DATA:${result?.scanRecord?.getManufacturerSpecificData(767)}")
-
-            val rawData = result?.scanRecord?.getManufacturerSpecificData(767)
-
-            if(rawData == null){
-                Log.e("DEBUG","DATA NULL")
-            }
-            else{
-
-                var data : ArrayList<Byte> = ArrayList()
-                rawData?.forEach {
-                    data.add(it)
-                }
-
-                statusOfNodes = checkStatusNode(data)
-
-                Log.e("DATA FINAL",statusOfNodes.toString())
-
-                nodes.forEach {
-                    for(index in statusOfNodes.indices){
-                        if(it.node.primaryElementAddress == statusOfNodes[index].unicastAddress){
-                            it.heartBeat = statusOfNodes[index].heartBeat
-                            it.battery = statusOfNodes[index].battery
-                            it.alarmSignal = statusOfNodes[index].alarmSignal
-                        }
-                    }
-                }
-
-                controlGroupView.refreshView()
-            }
-        }
-    }
-
-
-    private val bluetoothLeScanner: BluetoothLeScanner
-        get() {
-            val bluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
-            return bluetoothAdapter.bluetoothLeScanner
-        }
-
-    private fun checkStatusNode( a : ArrayList<Byte>) : ArrayList<statusOfNode>{
-        var index = 0
-        var stt = 1    // use to debug
-        var indexMax = a.size - 2
-        var statusOfNodes : ArrayList<statusOfNode> = ArrayList()
-
-
-        while(index <= indexMax){
-
-            var heartBeat = 0x01 and a[index].toInt()
-            var preBattery = a[index].toInt() shr 1
-            var Battery = 0x7F and preBattery
-            println("Node $stt : Heartbeat = $heartBeat || Battery = $Battery")
-
-
-            var alarmSignal = 0x03 and a[index + 1].toInt()
-            var preAddress = a[index + 1].toInt() shr 2
-            var Address = 0x3F and preAddress
-            println("Node $stt : Alarm Signal = $alarmSignal || Unicast Address = $Address")
-            println("**************************************************")
-
-            statusOfNodes.add(statusOfNode(heartBeat,Battery,alarmSignal,Address))
-
-            stt += 1
-            index += 2
-        }
-        return statusOfNodes
-    }
+//    //Scan status node though BLE
+//
+//    fun onChangeStatusGroup(){
+//        scanAdvertiseBle()
+//    }
+//
+//    fun scanAdvertiseBle(){
+//
+//
+//        println("**********Start scan************")
+//        bluetoothLeScanner.startScan(bleScanner)
+//
+//        Timer().schedule(SCAN_PERIOD) {
+//            println("***********Stop scan***********")
+//            bluetoothLeScanner.stopScan(bleScanner)
+//        }
+//    }
+//
+//    private val bleScanner = object : ScanCallback() {
+//        override fun onScanResult(callbackType: Int, result: ScanResult?) {
+//
+//            Log.e("SCAN","MAC:${result?.device?.address} - Manu:${result?.scanRecord?.manufacturerSpecificData}")
+//            Log.e("RAW DATA","SIZE:${result?.scanRecord?.getManufacturerSpecificData(767)?.size}- DATA:${result?.scanRecord?.getManufacturerSpecificData(767)}")
+//
+//            val rawData = result?.scanRecord?.getManufacturerSpecificData(767)
+//
+//            if(rawData == null){
+//                Log.e("DEBUG","DATA NULL")
+//            }
+//            else{
+//
+//                var data : ArrayList<Byte> = ArrayList()
+//                rawData?.forEach {
+//                    data.add(it)
+//                }
+//
+//                statusOfNodes = checkStatusNode(data)
+//
+//                Log.e("DATA FINAL",statusOfNodes.toString())
+//
+//                nodes.forEach {
+//                    for(index in statusOfNodes.indices){
+//                        if(it.node.primaryElementAddress == statusOfNodes[index].unicastAddress){
+//                            it.heartBeat = statusOfNodes[index].heartBeat
+//                            it.battery = statusOfNodes[index].battery
+//                            it.alarmSignal = statusOfNodes[index].alarmSignal
+//                        }
+//                    }
+//                }
+//
+//                controlGroupView.refreshView()
+//            }
+//        }
+//    }
+//
+//
+//    private val bluetoothLeScanner: BluetoothLeScanner
+//        get() {
+//            val bluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
+//            return bluetoothAdapter.bluetoothLeScanner
+//        }
+//
+//    private fun checkStatusNode( a : ArrayList<Byte>) : ArrayList<statusOfNode>{
+//        var index = 0
+//        var stt = 1    // use to debug
+//        var indexMax = a.size - 2
+//        var statusOfNodes : ArrayList<statusOfNode> = ArrayList()
+//
+//
+//        while(index <= indexMax){
+//
+//            var heartBeat = 0x01 and a[index].toInt()
+//            var preBattery = a[index].toInt() shr 1
+//            var Battery = 0x7F and preBattery
+//            println("Node $stt : Heartbeat = $heartBeat || Battery = $Battery")
+//
+//
+//            var alarmSignal = 0x03 and a[index + 1].toInt()
+//            var preAddress = a[index + 1].toInt() shr 2
+//            var Address = 0x3F and preAddress
+//            println("Node $stt : Alarm Signal = $alarmSignal || Unicast Address = $Address")
+//            println("**************************************************")
+//
+//            statusOfNodes.add(statusOfNode(heartBeat,Battery,alarmSignal,Address))
+//
+//            stt += 1
+//            index += 2
+//        }
+//        return statusOfNodes
+//    }
 
 }

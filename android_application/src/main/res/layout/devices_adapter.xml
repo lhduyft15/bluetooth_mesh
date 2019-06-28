@@ -51,8 +51,8 @@
                         android:layout_weight="1"
                         android:padding="@dimen/adapter_item_padding"
                         android:text="Generic Network"
-                        android:textColor="@color/adapter_item_title_color"
-                        android:textSize="@dimen/adapter_label_big_size"
+                        android:textColor="#37474F"
+                        android:textSize="20dp"
                         android:textStyle="bold" />
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -80,8 +80,10 @@
 
                 <ImageView
                     android:id="@+id/iv_device_image"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginLeft="12dp"
                     android:src="@drawable/question" />
             </LinearLayout>
 
@@ -94,7 +96,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
-                    android:padding="5dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_height="match_parent">
 
                     <LinearLayout
@@ -122,14 +124,14 @@
                                 android:layout_marginTop="6dp"
                                 android:textColor="@color/adapter_item_label_color"
                                 android:textSize="11dp"
-                                android:layout_marginLeft="5dp"
+                                android:layout_marginLeft="10dp"
                                 android:layout_height="wrap_content" />
 
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:orientation="horizontal"
-                            android:layout_marginTop="4dp"
+                            android:layout_marginTop="9dp"
                             android:layout_height="wrap_content">
 
                             <ImageView
@@ -145,7 +147,7 @@
                                 android:textColor="@color/adapter_item_label_color"
                                 android:textSize="11dp"
                                 android:layout_marginTop="5dp"
-                                android:layout_marginLeft="6dp"
+                                android:layout_marginLeft="10dp"
                                 android:layout_height="wrap_content" />
 
                             <TextView
