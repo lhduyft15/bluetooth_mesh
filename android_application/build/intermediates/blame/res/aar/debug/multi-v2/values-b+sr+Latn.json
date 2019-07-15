@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\incremental\\mergeAarDebugResources\\merged.dir\\values-b+sr+Latn\\values-b+sr+Latn.xml",
+            "outputFile": "D:\\bluetooth_mesh\\android_application\\build\\intermediates\\incremental\\mergeAarDebugResources\\merged.dir\\values-b+sr+Latn\\values-b+sr+Latn.xml",
             "map": [
                 {
                     "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\21bedb152b4a943d69e2046cf817efd0\\res\\values-b+sr+Latn\\values-b+sr+Latn.xml",

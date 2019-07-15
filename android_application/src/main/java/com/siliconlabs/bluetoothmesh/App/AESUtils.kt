@@ -3,6 +3,7 @@ package com.siliconlabs.bluetoothmesh.App
 import javax.crypto.Cipher
 import javax.crypto.spec.SecretKeySpec
 
+//Use to decrypt data AES
 
 object AESUtils {
 

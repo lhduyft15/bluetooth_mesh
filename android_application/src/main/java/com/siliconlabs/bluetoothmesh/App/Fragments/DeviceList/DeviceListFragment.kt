@@ -83,7 +83,7 @@ class DeviceListFragment : DaggerFragment(), DeviceListView, DeviceEditionDialog
         devices_list.setMultiChoiceModeListener(devicesListAdapter)
         devices_list.emptyView = ll_empty_view
 
-        //Update status node from gateway
+        //Auto update status node from gateway
         deviceListPresenter.updateStatusNode()
 
 
@@ -91,7 +91,7 @@ class DeviceListFragment : DaggerFragment(), DeviceListView, DeviceEditionDialog
             progressDialog.setMessage("Updating status device")
             progressDialog.show()
             Handler().postDelayed({progressDialog.dismiss()},2000)
-            deviceListPresenter.onChangeDeviceStatus()
+            deviceListPresenter.startScanBle()
         }
     }
 
@@ -106,6 +106,10 @@ class DeviceListFragment : DaggerFragment(), DeviceListView, DeviceEditionDialog
         devicesListAdapter?.finishActionMode()
     }
 
+    override fun onStop() {
+        super.onStop()
+        deviceListPresenter.stopScanBle()
+    }
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
         if (!isVisibleToUser) {

@@ -173,14 +173,4 @@
         </RelativeLayout>
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/scanUpdateStatusOfGroup"
-        android:clickable="true"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="16dp"
-        android:layout_alignParentEnd="true"
-        android:src="@drawable/scan"
-        android:focusable="true"/>
 </RelativeLayout>

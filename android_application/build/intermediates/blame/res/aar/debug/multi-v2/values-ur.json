@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\bluetooth_mesh\\android_application\\build\\intermediates\\incremental\\mergeAarDebugResources\\merged.dir\\values-ur\\values-ur.xml",
+            "outputFile": "D:\\bluetooth_mesh\\android_application\\build\\intermediates\\incremental\\mergeAarDebugResources\\merged.dir\\values-ur\\values-ur.xml",
             "map": [
                 {
                     "source": "C:\\Users\\lhduy\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.2.0.aar\\a69df37d007809de7055d6bd541f09a8\\res\\values-ur\\values.xml",

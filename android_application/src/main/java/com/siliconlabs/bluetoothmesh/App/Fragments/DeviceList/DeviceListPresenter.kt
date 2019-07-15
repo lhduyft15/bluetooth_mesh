@@ -5,8 +5,9 @@
 package com.siliconlabs.bluetoothmesh.App.Fragments.DeviceList
 
 import android.bluetooth.BluetoothAdapter
-import android.bluetooth.le.*
-import android.location.Address
+import android.bluetooth.le.BluetoothLeScanner
+import android.bluetooth.le.ScanCallback
+import android.bluetooth.le.ScanResult
 import android.os.CountDownTimer
 import android.util.Log
 import com.siliconlab.bluetoothmesh.adk.ErrorType
@@ -20,18 +21,16 @@ import com.siliconlabs.bluetoothmesh.App.Models.DeviceFunctionality
 import com.siliconlabs.bluetoothmesh.App.Models.MeshElementControl
 import com.siliconlabs.bluetoothmesh.App.Models.MeshNodeManager
 import com.siliconlabs.bluetoothmesh.App.statusOfNode
-import java.lang.Exception
-import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.concurrent.schedule
+
 
 /**
  * @author Comarch S.A.
  */
-
 const val SCAN_PERIOD: Long = 10000
-class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLogic: MeshLogic, val networkConnectionLogic: NetworkConnectionLogic, val meshNodeManager: MeshNodeManager) : BasePresenter, DeviceListAdapter.DeviceItemListener, MeshElementControl.SetCallback, MeshElementControl.GetOnOffCallback, NetworkConnectionListener {
-    private val TAG: String = javaClass.canonicalName!!
+class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLogic: MeshLogic, val networkConnectionLogic: NetworkConnectionLogic, val meshNodeManager: MeshNodeManager) : BasePresenter, DeviceListAdapter.DeviceItemListener,MeshElementControl.GetOnOffCallback,MeshElementControl.SetCallback, NetworkConnectionListener {
+
+    private val TAG: String = javaClass.canonicalName
 
     private val networkInfo = meshLogic.currentSubnet!!
 
@@ -54,20 +53,14 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
 
     override fun onPause() {
         Log.d(TAG, "onPause")
+        stopScanBle()
     }
-
 
     fun refreshList() {
         deviceList = meshNodeManager.getMeshNodes(networkInfo)
         deviceListView.setDevicesList(deviceList)
     }
 
-    fun startConfigDevice(deviceInfo: MeshNode) {
-        deviceListView.startConfigDevice(deviceInfo)
-    }
-
-
-    // DeviceItemListener________________________________________________
     override fun onClickDeviceImageListener(deviceInfo: MeshNode) {
         if (deviceInfo.node.groups.isEmpty()) {
             return
@@ -76,16 +69,39 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
         val nodeElementControl = MeshElementControl(deviceInfo.node.elements[0], deviceInfo.node.groups.iterator().next())
 
         when (deviceInfo.functionality) {
-
-            DeviceFunctionality.FUNCTIONALITY.Level -> {
+            DeviceFunctionality.FUNCTIONALITY.OnOff -> {
                 val newOnOffState = !deviceInfo.onOffState
-                if(newOnOffState){
-                    nodeElementControl.setLevel(100, this)
-                }
-                else{
-                    nodeElementControl.setLevel(0, this)
-                }
+
+                nodeElementControl.setOnOff(newOnOffState, this)
                 deviceInfo.onOffState = newOnOffState
+
+            }
+            DeviceFunctionality.FUNCTIONALITY.Level -> {
+                var newLevelPercentage = 100
+                if (deviceInfo.levelPercentage > 0) {
+                    newLevelPercentage = 0
+                }
+
+                nodeElementControl.setLevel(newLevelPercentage, this)
+                deviceInfo.levelPercentage = newLevelPercentage
+            }
+            DeviceFunctionality.FUNCTIONALITY.Lightness -> {
+                var newLightnessPercentage = 100
+                if (deviceInfo.lightnessPercentage > 0) {
+                    newLightnessPercentage = 0
+                }
+
+                nodeElementControl.setLightness(newLightnessPercentage, this)
+                deviceInfo.lightnessPercentage = newLightnessPercentage
+            }
+            DeviceFunctionality.FUNCTIONALITY.CTL -> {
+                var newLightnessPercentage = 100
+                if (deviceInfo.lightnessPercentage > 0) {
+                    newLightnessPercentage = 0
+                }
+
+                nodeElementControl.setColorTemperature(newLightnessPercentage, deviceInfo.temperaturePercentage, deviceInfo.deltaUvPercentage, this)
+                deviceInfo.lightnessPercentage = newLightnessPercentage
             }
         }
 
@@ -97,22 +113,52 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
     }
 
     override fun onSeekBarChangeListener(deviceInfo: MeshNode, levelPercentage: Int, temperaturePercentage: Int?, deltaUvPercentage: Int?) {
+        val nodeElementControl = MeshElementControl(deviceInfo.node.elements[0], deviceInfo.node.groups.iterator().next())
+
+        when (deviceInfo.functionality) {
+            DeviceFunctionality.FUNCTIONALITY.Level -> {
+                nodeElementControl.setLevel(levelPercentage, this)
+
+                deviceInfo.levelPercentage = levelPercentage
+            }
+            DeviceFunctionality.FUNCTIONALITY.Lightness -> {
+                nodeElementControl.setLightness(levelPercentage, this)
+
+                deviceInfo.lightnessPercentage = levelPercentage
+            }
+            DeviceFunctionality.FUNCTIONALITY.CTL -> {
+                if (temperaturePercentage != null && deltaUvPercentage != null) {
+                    nodeElementControl.setColorTemperature(levelPercentage, temperaturePercentage, deltaUvPercentage, this)
+
+                    deviceInfo.lightnessPercentage = levelPercentage
+                    deviceInfo.temperaturePercentage = temperaturePercentage
+                    deviceInfo.deltaUvPercentage = deltaUvPercentage
+                }
+            }
+        }
+
+        deviceListView.notifyDataSetChanged()
     }
 
     override fun onConfigClickListener(deviceInfo: MeshNode) {
         deviceListView.showDeviceConfigDialog(deviceInfo)
     }
 
-
-    // mesh element control callback____________________________________
-    override fun success(on: Boolean){}
-    override fun error(error: ErrorType) {
-        deviceListView.showErrorToast(error)
+    fun startConfigDevice(deviceInfo: MeshNode) {
+        deviceListView.startConfigDevice(deviceInfo)
     }
 
+    // mesh element control callback
 
+    override fun success(on: Boolean){
+    }
 
-    // network connection callback_____________________________________
+    override fun error(error: ErrorType) {
+        deviceListView.showErrorToast(error)
+
+    }
+    // network connection callback
+
     override fun connecting() {
         deviceListView.notifyDataSetChanged()
     }
@@ -133,54 +179,49 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
         // nothing to do
         if (startedConfiguration) {
             deviceListView.updateLoadingDialogMessage(DeviceListView.LOADING_DIALOG_MESSAGE.CONFIG_CONNECTING_ERROR, error, true)
-            meshLogic.deviceToConfigure = null
         }
     }
 
-    fun onChangeDeviceStatus(){
-        scanAdvertiseBle()
-    }
-
     fun updateStatusNode(){
-        var countDownTimer = object : CountDownTimer(20000,9000){
+        var countDownTimer = object : CountDownTimer(20000, SCAN_PERIOD){
             override fun onTick(millisUntilFinished: Long) {
-                onChangeDeviceStatus()
-                Thread.sleep(1000)
+                startScanBle()
             }
 
             override fun onFinish() {
                 start()
-
             }
-
         }
         countDownTimer.start()
     }
 
-    fun scanAdvertiseBle(){
 
+    fun startScanBle(){
 
         Log.e("DEBUG","**********Start scan************")
         bluetoothLeScanner.startScan(bleScanner)
+    }
 
-        Timer().schedule(SCAN_PERIOD) {
-            Log.e("DEBUG","***********Stop scan***********")
-            bluetoothLeScanner.stopScan(bleScanner)
-        }
+    fun stopScanBle(){
+
+        Log.e("DEBUG","***********Stop scan************")
+        bluetoothLeScanner.stopScan(bleScanner)
     }
 
     private val bleScanner = object : ScanCallback() {
         override fun onScanResult(callbackType: Int, result: ScanResult?) {
 
             Log.e("SCAN","MAC:${result?.device?.address} - Manu:${result?.scanRecord?.manufacturerSpecificData}")
-            Log.e("RAW DATA","SIZE:${result?.scanRecord?.getManufacturerSpecificData(767)?.size}- DATA:${result?.scanRecord?.getManufacturerSpecificData(767)}")
+            Log.e("RAW DATA","DATA:${result?.scanRecord?.getManufacturerSpecificData(767)}")
 
+            // 767 is Silabs' ID
             val rawData = result?.scanRecord?.getManufacturerSpecificData(767)
 
             if(rawData == null){
                 Log.e("DEBUG","DATA NULL")
             }
             else{
+                stopScanBle()
 
                 var data : ArrayList<Byte> = ArrayList()
 
@@ -190,12 +231,11 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
                         data.add(it)
                     }
 
-                    Log.e("TEST", "decrypted:$decrypted")
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
 
-                statusOfNodes = checkStatusNode(data)
+                statusOfNodes = analysisData(data)
 
                 Log.e("DATA FINAL",statusOfNodes.toString())
 
@@ -207,8 +247,6 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
                             it.battery = statusOfNodes[index].battery
                             it.alarmSignal = statusOfNodes[index].alarmSignal
                         }
-
-                        Log.e("!!!!!","${it.heartBeat}--${it.battery}---${it.alarmSignal}")
 
                     }
                 }
@@ -225,7 +263,7 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
             return bluetoothAdapter.bluetoothLeScanner
         }
 
-    private fun checkStatusNode( a : ArrayList<Byte>) : ArrayList<statusOfNode>{
+    private fun analysisData( a : ArrayList<Byte>) : ArrayList<statusOfNode>{
         var index = 0
         var stt = 1
         var indexMax = a.size - 2
@@ -235,7 +273,7 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
        * Data include : 16 nodes
        * Each node has 2 bytes:  First Byte | Second Byte
        *  - First Byte : 7 bits battery | 1 bit heartbeat
-       *  - Second Byte : 6 bits unicast address | 2 bits alarm signal
+       *  - Second Byte : 7 bits unicast address | 1 bits alarm signal
        * */
 
         while(index <= indexMax){
@@ -246,9 +284,9 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
             Log.e("DEBUG","Node $stt : Heartbeat = $heartBeat || Battery = $Battery")
 
 
-            var alarmSignal = 0x03 and a[index + 1].toInt()
-            var preAddress = a[index + 1].toInt() shr 2
-            var Address = 0x3F and preAddress
+            var alarmSignal = 0x01 and a[index + 1].toInt()
+            var preAddress = a[index + 1].toInt() shr 1
+            var Address = 0x7F and preAddress
             Log.e("DEBUG","Node $stt : Alarm Signal = $alarmSignal || Unicast Address = $Address")
             Log.e("DEBUG","**************************************************")
 
@@ -259,7 +297,5 @@ class DeviceListPresenter(private val deviceListView: DeviceListView, val meshLo
         }
         return statusOfNodes
     }
-
-
 
 }

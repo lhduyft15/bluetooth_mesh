@@ -1,0 +1,4 @@
+#Mon Jul 15 16:07:44 ICT 2019
+base.0=D\:\\bluetooth_mesh\\android_application\\build\\intermediates\\dex\\aarRelease\\mergeDexAarRelease\\out
+path.0=classes.dex
+renamed.0=classes.dex

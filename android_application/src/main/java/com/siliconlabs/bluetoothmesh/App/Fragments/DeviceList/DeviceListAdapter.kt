@@ -47,10 +47,12 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
         }
 
         holder.itemView.apply {
+
+            //---------------------------------------------------------------------
             tv_device_name.text = deviceInfo.node.name
             tv_device_id.text = deviceInfo.node.primaryElementAddress?.toString()
 
-            //----------------------------------------------------------
+
             if(deviceInfo.heartBeat == 1){
                 tvStatus.text = "Connected"
                 ivStatus.setImageResource(R.drawable.nodeon)
@@ -60,7 +62,6 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
                 ivStatus.setImageResource(R.drawable.nodeoff)
             }
 
-            Log.e("ALARM SIGNAL","${deviceInfo.alarmSignal}")
 
             if(deviceInfo.alarmSignal == 0){
                 ivAlarmSignal.setImageResource(R.drawable.alarmsignaloff)
@@ -69,9 +70,12 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
                 ivAlarmSignal.setImageResource(R.drawable.alarmsignalon)
             }
 
+
             tvBattery.text = deviceInfo.battery.toString()
 
             //------------------------------------------------------------
+
+
             cb_selected.isChecked = selectedItemsIds.indexOfKey(position) >= 0
 
             iv_config.setOnClickListener {
@@ -155,11 +159,7 @@ class DeviceListAdapter(ctx: Context, private val networkConnectionLogic: Networ
                     if (networkConnectionLogic.isConnected()) {
                         iv_device_image.setImageResource(R.drawable.friendnode)
                     }
-//                    else if (deviceInfo.onOffState) {
-//                        iv_device_image.setImageResource(R.drawable.lamp_on)
-//                    } else {
-//                        iv_device_image.setImageResource(R.drawable.lamp_off)
-//                    }
+
 
                 }
                 DeviceFunctionality.FUNCTIONALITY.CTL -> {
